@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join as a Rider | Chiyacut</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #7b120a; /* Fixed color */
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: center;
+      padding: 30px 10px;
+    }
+
+    .logo {
+      width: 140px;
+      height: auto;
+      margin-bottom: 20px;
+      transition: transform 0.4s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    p.description {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 25px;
+    }
+
+    .form-box {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      width: 100%;
+      max-width: 720px;
+      height: 85vh;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+    }
+
+    /* Optional scrollbar style */
+    .form-box::-webkit-scrollbar {
+      width: 6px;
+    }
+    .form-box::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 1400px;
+      border: none;
+      border-radius: 15px;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 24px;
+      }
+      iframe {
+        height: 1600px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      iframe {
+        height: 1800px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Company Logo -->
+  <img src="chiyacut_logo.png" alt="Chiyacut Logo" class="logo" />
+
+  <!-- Page Header -->
+  <h1>Join as a Rider</h1>
+  <p class="description">
+    Remember your ID is <strong>PHONE NUMBER</strong> which you fill in the form.
+  </p>
+
+  <!-- Embedded Google Form -->
+  <div class="form-box">
+    <iframe 
+      src="https://docs.google.com/forms/d/e/1FAIpQLSdfobtN5eqQ7hIoyClAHrtfUw_6Ay_bmzAUNuOvgmQjTsKhSw/viewform?embedded=true" 
+      frameborder="0" 
+      marginheight="0" 
+      marginwidth="0">
+      Loading…
+    </iframe>
+  </div>
+
+</body>
+</html>
