@@ -1,241 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="style.css">
   <title>Join as a Rider | Chiyacut</title>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: "Poppins", sans-serif;
-      background-color: #7b120a;
-      color: #fff;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 30px 10px;
-    }
-
-    /* --- Logo & Button Row --- */
-.header-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 25px;
-  margin-bottom: 30px;
-  flex-wrap: wrap;
-}
-
-/* Logo styling */
-.logo {
-  width: 140px;
-  height: auto;
-  transition: transform 0.4s ease;
-}
-
-.logo:hover {
-  transform: scale(1.05);
-}
-
-/* --- Super Ride Button --- */
-.super-ride-btn {
-  display: inline-block;
-  background: linear-gradient(90deg, #ff6a00, #ee0979);
-  color: #fff;
-  padding: 12px 30px;
-  font-size: 18px;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 50px;
-  box-shadow: 0 0 20px rgba(255, 107, 0, 0.6);
-  animation: pulseGlow 1.5s infinite;
-  transition: all 0.3s ease;
-}
-
-@keyframes pulseGlow {
-  0% {
-    box-shadow: 0 0 10px rgba(255, 107, 0, 0.8), 0 0 20px rgba(255, 107, 0, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 25px rgba(255, 107, 0, 1), 0 0 50px rgba(255, 0, 128, 0.6);
-  }
-  100% {
-    box-shadow: 0 0 10px rgba(255, 107, 0, 0.8), 0 0 20px rgba(255, 107, 0, 0.4);
-  }
-}
-
-.super-ride-btn:hover {
-  animation: none;
-  transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(255, 107, 0, 0.9);
-  background: linear-gradient(90deg, #ee0979, #ff6a00);
-}
-
-.super-ride-btn:active {
-  transform: scale(0.97);
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .header-row {
-    flex-direction: column;
-  }
-}
-
-
-    h1 {
-      font-size: 28px;
-      margin-bottom: 10px;
-      letter-spacing: 0.5px;
-    }
-
-    p.description {
-      font-size: 15px;
-      color: rgba(255, 255, 255, 0.9);
-      margin-bottom: 25px;
-    }
-
-    /* --- Form Box --- */
-    .form-box {
-      background: rgba(255, 255, 255, 0.15);
-      padding: 20px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(10px);
-      width: 100%;
-      max-width: 720px;
-      height: 85vh;
-      overflow-y: auto;
-      scrollbar-width: thin;
-      scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
-      margin-bottom: 40px;
-    }
-
-    .form-box::-webkit-scrollbar {
-      width: 6px;
-    }
-    .form-box::-webkit-scrollbar-thumb {
-      background-color: rgba(255, 255, 255, 0.3);
-      border-radius: 10px;
-    }
-
-    iframe {
-      width: 100%;
-      height: 1400px;
-      border: none;
-      border-radius: 15px;
-    }
-
-    /* --- Info Boxes Section --- */
-    .info-section {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 25px;
-      max-width: 1200px;
-      width: 100%;
-    }
-
-    .info-box {
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 16px;
-      padding: 20px;
-      width: 300px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(10px);
-      transition: transform 0.3s ease, background 0.3s ease;
-    }
-
-    .info-box:hover {
-      transform: translateY(-5px);
-      background: rgba(255, 255, 255, 0.25);
-    }
-
-    .info-box img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 15px;
-    }
-
-    .info-box h3 {
-      font-size: 18px;
-      margin-bottom: 5px;
-    }
-
-    .info-box p {
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.9);
-      margin: 4px 0;
-    }
-
-    @media (max-width: 900px) {
-      iframe {
-        height: 1600px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 24px;
-      }
-      .info-box {
-        width: 90%;
-      }
-    }
-
-    @media (max-width: 480px) {
-      iframe {
-        height: 1800px;
-      }
-    }
-
-    /* --- Business Banner Section --- */
-.business-banner {
-  width: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-  border-radius: 16px;
-  padding: 60px 20px;
-  text-align: center;
-  margin: 60px 0 20px 0;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.business-banner h1 {
-  font-size: 40px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: #fff;
-  margin-bottom: 15px;
-}
-
-.business-banner p {
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-@media (max-width: 768px) {
-  .business-banner h1 {
-    font-size: 30px;
-  }
-  .business-banner p {
-    font-size: 16px;
-  }
-}
-
-
-
-  </style>
+ 
 </head>
 <body>
 
@@ -244,8 +15,6 @@
   <img src="chiyacut_logo.png" alt="Chiyacut Logo" class="logo" />
   <a href="https://shorturl.at/i7CXi" target="_blank" class="super-ride-btn">🚴‍♂️ Super Ride</a>
 </div>
-
-
 
   <!-- Page Header -->
   <h1>Join as a Rider</h1>
@@ -275,20 +44,22 @@
   <!-- Info Boxes Section -->
   <div class="info-section">
     <div class="info-box">
-      <img src="chiyacut_logo.png" alt="chiyacut logo">
-      <h3>comong soon..</h3>
+      <img src="business/aamako_khana_ghar.jpg" alt="Rider 1">
+      <h3>Aamako Khana Ghar</h3>
+      <p><strong>Location:</strong> Balaju chowk, kathmandu</p>
+      <p><strong>Contact:</strong> +977 9761729129</p>
+    </div>
+
+    <div class="info-box">
+      <img src="chiyacut_logo.png" alt="Rider 2">
+      <h3>coming soon</h3>
       <p><strong>Location:</strong> ...</p>
       <p><strong>Contact:</strong> ...</p>
     </div>
-     <div class="info-box">
-      <img src="chiyacut_logo.png" alt="chiyacut logo">
-      <h3>comong soon..</h3>
-      <p><strong>Location:</strong> ...</p>
-      <p><strong>Contact:</strong> ...</p>
-    </div>
-     <div class="info-box">
-      <img src="chiyacut_logo.png" alt="chiyacut logo">
-      <h3>comong soon..</h3>
+
+    <div class="info-box">
+      <img src="chiyacut_logo.png" alt="Rider 2">
+      <h3>coming soon</h3>
       <p><strong>Location:</strong> ...</p>
       <p><strong>Contact:</strong> ...</p>
     </div>
