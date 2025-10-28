@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Join as a Rider | Chiyacut</title>
 
-<!-- css -->
-<style type="text/css">
-  
-  
+  <style type="text/css">
+    
     * {
       margin: 0;
       padding: 0;
@@ -149,108 +147,7 @@
       border-radius: 15px;
     }
 
-    
- /* --- Info Boxes Section --- */
-.info-section {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 35px;
-  max-width: 1300px;
-  width: 100%;
-  margin-top: 50px;
-}
-
-/* --- Individual Info Box --- */
-.info-box {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
-  padding: 25px;
-  width: 360px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.info-box:hover {
-  transform: translateY(-8px) scale(1.02);
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-}
-
-/* --- Box Image --- */
-.info-box img {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-  border-radius: 15px;
-  margin-bottom: 15px;
-}
-
-/* --- Box Text --- */
-.info-box h3 {
-  font-size: 20px;
-  margin-bottom: 6px;
-  font-weight: 600;
-}
-
-.info-box p {
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.95);
-  margin: 5px 0;
-  line-height: 1.5;
-}
-
-/* --- Responsive Design --- */
-@media (max-width: 1024px) {
-  .info-box {
-    width: 300px;
-  }
-}
-
-@media (max-width: 768px) {
-  .info-box {
-    width: 90%;
-  }
-  .info-box img {
-    height: 220px;
-  }
-}
-
-.business-banner {
-  width: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-  border-radius: 16px;
-  padding: 60px 20px;
-  text-align: center;
-  margin: 60px 0 20px 0;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.business-banner h1 {
-  font-size: 40px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: #fff;
-  margin-bottom: 15px;
-}
-
-.business-banner p {
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-@media (max-width: 768px) {
-  .business-banner h1 {
-    font-size: 30px;
-  }
-  .business-banner p {
-    font-size: 16px;
-  }
-}
-
+ 
 /* ====== Footer Section ====== */
 .footer {
   background: rgba(0, 0, 0, 0.3);
@@ -335,9 +232,183 @@
   }
 }
 
+/* ===== Restaurant Partner Slider ===== */
+.restaurant-slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+  margin: 70px auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
 
-</style>
+.restaurant-slide {
+  display: none;
+  width: 100%;
+  transition: opacity 1s ease-in-out;
+}
 
+.restaurant-slide.active {
+  display: block;
+  animation: fadeSlide 1s ease-in-out;
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Inside container */
+.restaurant-container {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  color: #fff;
+}
+
+/* Left Image */
+.restaurant-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.restaurant-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Right Info */
+.restaurant-info {
+  flex: 1.2;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.restaurant-name {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #ffb347;
+}
+
+.restaurant-info p {
+  font-size: 16px;
+  margin: 8px 0;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.restaurant-desc {
+  margin-top: 15px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Category Badges */
+.category {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #fff;
+}
+.category.premium {
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
+}
+.category.expensive {
+  background: linear-gradient(90deg, #ff4e50, #f9d423);
+}
+.category.economic {
+  background: linear-gradient(90deg, #56ab2f, #a8e063);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .restaurant-container {
+    flex-direction: column;
+  }
+
+  .restaurant-info {
+    padding: 25px;
+  }
+
+  .restaurant-name {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .restaurant-info p {
+    text-align: center;
+  }
+}
+
+.restaurant-image img {
+  width: 100%;
+  height: 350px;          /* makes all images same height */
+  object-fit: cover;      /* ensures image looks clean and not stretched */
+  border-radius: 15px;
+}
+
+/* --- Section Header --- */
+.section-header {
+  text-align: center;
+  margin: 60px auto 40px auto;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #ffcc00; /* Accent line color */
+  margin: 10px auto 0;
+  border-radius: 2px;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.section-description {
+  margin-top: 15px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Pulse animation for underline */
+@keyframes pulse {
+  0%, 100% { transform: scaleX(1); opacity: 0.7; }
+  50% { transform: scaleX(1.3); opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 26px;
+  }
+  .section-description {
+    font-size: 15px;
+  }
+}
+
+  </style>
  
 </head>
 <body>
@@ -345,71 +416,379 @@
  <!-- Logo and Button Row -->
 <div class="header-row">
   <img src="chiyacut_logo.png" alt="Chiyacut Logo" class="logo" />
-  <a href="https://shorturl.at/i7CXi" target="_blank" class="super-ride-btn">🚴‍♂️ Super Ride</a> 
+  <a href="https://shorturl.at/i7CXi" target="_blank" class="super-ride-btn">Super Ride 🚴‍♂️</a>
 </div>
 
 
-  <!-- Page Header -->
-  <h1>Join as a Rider</h1>
 
-  <p class="description">
-    Remember your ID is <strong>PHONE NUMBER</strong> which you fill in the form.
-  </p>
-
-  <!-- Embedded Google Form -->
-  <div class="form-box">
-    <iframe 
-      src="https://docs.google.com/forms/d/e/1FAIpQLSdfobtN5eqQ7hIoyClAHrtfUw_6Ay_bmzAUNuOvgmQjTsKhSw/viewform?embedded=true" 
-      frameborder="0" 
-      marginheight="0" 
-      marginwidth="0">
-      Loading…
-    </iframe>
-  </div>
-
-  <!-- Page Header -->
-  <h1>We partner with Restaurent & Cafes for riders</h1>
-  <p class="description">
-    Riders this is for you. Now, you can comfertabelly relax in the good space and enjoy food at affordable cost(only for riders).
+<!-- Full Screen Section -->
+<section class="full-screen-section">
+  <div class="section-content">
+    <h1>Nepal's First Ride Hailing Community</h1>
+    <p>
+      <span class="icon">☕</span>
+      Become part of Nepal’s fastest-growing riders community network. 
+      Fill out the form — it only takes a minute !
     </p>
-    
-
-  <!-- Info Boxes Section -->
-  <div class="info-section">
-    <div class="info-box">
-      <img src="business/aamako_khana_ghar.jpg" alt="Rider 1">
-      <h3>Aamako Khana Ghar</h3>
-      <p><strong>Location:</strong> Balaju chowk, kathmandu</p>
-      <p><strong>Contact:</strong> +977 9761729129</p>
+    <div class="form-box">
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdfobtN5eqQ7hIoyClAHrtfUw_6Ay_bmzAUNuOvgmQjTsKhSw/viewform?embedded=true"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0">
+        Loading…
+      </iframe>
     </div>
-
-    <div class="info-box">
-      <img src="chiyacut_logo.png" alt="Rider 2">
-      <h3>coming soon</h3>
-      <p><strong>Location:</strong> ...</p>
-      <p><strong>Contact:</strong> ...</p>
-    </div>
-
-    <div class="info-box">
-      <img src="chiyacut_logo.png" alt="Rider 2">
-      <h3>coming soon</h3>
-      <p><strong>Location:</strong> ...</p>
-      <p><strong>Contact:</strong> ...</p>
-    </div>
-
-    
   </div>
+</section>
 
-  <!-- Page Header For Business -->
-<div class="business-banner">
-  <h1>Join as a Business</h1>
-  <p>We will definitely <strong>contact</strong> you soon.</p>
+<style>
+  /* --- Full Screen Centered Section --- */
+  .full-screen-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    background-color: #7b120a;
+    color: #fff;
+    text-align: center;
+  }
+
+  .section-content {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .section-content h1 {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .section-content p {
+    font-size: 20px;
+    line-height: 1.8;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .section-content .icon {
+    font-size: 28px;
+  }
+
+  .form-box {
+    width: 100%;
+    max-width: 700px;
+    height: 800px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+  }
+
+  .form-box iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 15px;
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 900px) {
+    .section-content h1 {
+      font-size: 48px;
+    }
+    .section-content p {
+      font-size: 18px;
+    }
+    .form-box {
+      height: 700px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .section-content h1 {
+      font-size: 36px;
+    }
+    .section-content p {
+      font-size: 16px;
+    }
+    .form-box {
+      height: 600px;
+    }
+  }
+</style>
+
+
+<!-- What We Do Section -->
+<section class="what-we-do">
+  <div class="content">
+    <h2>What We Do</h2>
+    <p>
+      At <strong>Chiyacut</strong>, we are dedicated to supporting Nepal’s ride-hailing community. We give riders a platform to raise their voices through social media, ensuring their concerns are heard. We collaborate with restaurants and cafes to provide comfortable and affordable food options, making daily life easier for riders. Beyond that, we stand by our riders during tough times by offering financial support for minor accidents, helping them stay safe and secure.  
+      <br><br>
+      To build a ride-hailing community where riders are valued, supported, and connected through care, safety, and convenience.
+    </p>
+  </div>
+</section>
+
+<style>
+  /* --- What We Do Section --- */
+  .what-we-do {
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 100px 8%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .what-we-do .content {
+    max-width: 900px;
+    animation: fadeInUp 1.5s ease;
+  }
+
+  .what-we-do h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #7b120a;
+    margin-bottom: 25px;
+    position: relative;
+  }
+
+  .what-we-do h2::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: #ffcc00;
+    display: block;
+    margin: 12px auto 0;
+    border-radius: 2px;
+  }
+
+  .what-we-do p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  /* --- Animation --- */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 768px) {
+    .what-we-do {
+      padding: 70px 20px;
+    }
+
+    .what-we-do h2 {
+      font-size: 32px;
+    }
+
+    .what-we-do p {
+      font-size: 16px;
+      line-height: 1.7;
+    }
+  }
+</style>
+
+
+<!-- ===== Restaurant Partner Detail Slider Section ===== -->
+<!-- Section Header -->
+<div class="section-header">
+  <h2 class="section-title">RESTAURENTS/ CAFES</h2>
+  <p class="section-description">
+    We dedicated collabration with restaurant and cafes for our riders.
+    Now, they can hangout, relax and enjoying food at affordable cost.
+  </p>
 </div>
 
-  <!-- Embedded Google Form For Business -->
-  <div class="form-box">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdIFtebqQmKXKKcZTZAnJwqNsL5F3RBWWFp2Ox_Svagnm4ulA/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+<section class="restaurant-slider">
+  <div class="restaurant-slide active">
+    <div class="restaurant-container">
+      <div class="restaurant-image">
+        <img src="business/aamako_khana_ghar.jpg" alt="Aamako Khana Ghar">
+      </div>
+      <div class="restaurant-info">
+        <h2 class="restaurant-name"> Aamako Khana Ghar</h2>
+        <p><strong>📍 Location:</strong> Balaju chowk, Kathmandu</p>
+        <p><strong>📞 Contact:</strong> 9761729129</p>
+        <p><strong>🪑 Seat Capacity:</strong> 30</p>
+        <p><strong>🏷 Category:</strong> <span class="category premium"> Affordable</span></p>
+        <p class="restaurant-desc">
+          The restaurant provides clean, healthy food at affordable price. We have clean and comfertable space also have parking facility.
+        </p>
+      </div>
+    </div>
   </div>
+
+  
+</section>
+
+
+
+<!-- Message & Podcast Section -->
+
+
+<section class="message-podcast">
+  <div class="container">
+    <div class="message">
+      <h2>RIDER KO GUNASO</h2>
+      <p>
+        We run a podcast on YouTube called "Rider Ko Gunaso" where we talk make conversation with riders and raise there voice.
+        Watch now
+      </p>
+    </div>
+
+    <div class="podcast-banner">
+      <a href="https://www.youtube.com/playlist?list=PLnd17RlFfJOJMyJ9lgQAWQYKe1We0fZkn" target="_blank">
+        <img src="chiyacut_logo.png" alt="Chiyacut Podcast">
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* --- Container to match page width --- */
+  .message-podcast .container {
+    max-width: 1200px; 
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: stretch; /* equal height for both columns */
+  }
+
+  /* Left Column: Message */
+  .message {
+    flex: 1 1 45%;
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 15px;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    min-width: 280px;
+  }
+
+  .message h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #7b120a;
+  }
+
+  .message p {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  /* Right Column: Podcast Banner */
+  .podcast-banner {
+    flex: 1 1 45%;
+    background-color: #7b120a;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    min-width: 280px;
+  }
+
+  .podcast-banner img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    max-height: 400px; /* keeps images uniform */
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+
+  .podcast-banner img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 1024px) {
+    .message h2 {
+      font-size: 32px;
+    }
+
+    .message p {
+      font-size: 17px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .message-podcast .container {
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .message, .podcast-banner {
+      flex: 1 1 100%;
+      width: 100%;
+    }
+
+    .message {
+      padding: 30px 20px;
+    }
+
+    .podcast-banner img {
+      max-height: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .message h2 {
+      font-size: 28px;
+    }
+
+    .message p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .podcast-banner {
+      padding: 15px;
+    }
+  }
+</style>
+
+
+
+
+
+
 
   <!-- ====== Footer Section ====== -->
 <footer class="footer">
@@ -424,7 +803,10 @@
       </div>
     </div>
 
-    <!-- Important Links -->
+   
+    <!-- Important Links 
+
+
     <div class="footer-section">
       <h3>Important Links</h3>
       <ul>
@@ -435,7 +817,7 @@
       </ul>
     </div>
 
-    <!-- Services -->
+    <!-- Services 
     <div class="footer-section">
       <h3>Our Services</h3>
       <ul>
@@ -445,15 +827,30 @@
         <li><a href="#">Customer support</a></li>
       </ul>
     </div>
-  </div>
+  </div> -->
 
   <div class="footer-bottom">
     <p>© 2030 Chiyacut. All Rights Reserved.</p>
   </div>
-</footer>
+</footer> 
 
+
+<script>
+  let slideIndex = 0;
+  const slides = document.querySelectorAll(".restaurant-slide");
+
+  function showSlides() {
+    slides.forEach(slide => slide.classList.remove("active"));
+    slideIndex = (slideIndex + 1) % slides.length;
+    slides[slideIndex].classList.add("active");
+  }
+
+  // Start with the first slide visible
+  slides[0].classList.add("active");
+
+  // Auto-slide every 5 seconds
+  setInterval(showSlides, 5000);
+</script>
 
 </body>
 </html>
-
-
