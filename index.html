@@ -6,9 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Join as a Rider | Chiyacut</title>
-
-  <style type="text/css">
-    
+<style type="text/css">
+  
     * {
       margin: 0;
       padding: 0;
@@ -408,7 +407,8 @@
   }
 }
 
-  </style>
+</style>
+
  
 </head>
 <body>
@@ -651,143 +651,154 @@
 
 
 
-<!-- Message & Podcast Section -->
 
 
-<section class="message-podcast">
-  <div class="container">
-    <div class="message">
-      <h2>RIDER KO GUNASO</h2>
+
+
+<!-- Support / Fund Section -->
+<section class="fund-section">
+  <div class="fund-container">
+    <div class="fund-text">
+      <h2>SUPPORT OUR MISSION</h2>
       <p>
-        We run a podcast on YouTube called "Rider Ko Gunaso" where we talk make conversation with riders and raise there voice.
-        Watch now
+        Your contribution helps us empower riders,
+        Every small support matters. 
       </p>
+      <a href="https://shorturl.at/i7CXi" target="_blank" class="fund-btn">Join as Rider</a>
     </div>
 
-    <div class="podcast-banner">
-      <a href="https://www.youtube.com/playlist?list=PLnd17RlFfJOJMyJ9lgQAWQYKe1We0fZkn" target="_blank">
-        <img src="chiyacut_logo.png" alt="Chiyacut Podcast">
-      </a>
+    <div class="fund-qr">
+      <img src="qr.jpg" alt="Bank QR Code for Contribution">
+      <p class="qr-note">Scan this QR to send your support ❤️</p>
     </div>
   </div>
 </section>
 
 <style>
-  /* --- Container to match page width --- */
-  .message-podcast .container {
-    max-width: 1200px; 
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-    align-items: stretch; /* equal height for both columns */
-  }
-
-  /* Left Column: Message */
-  .message {
-    flex: 1 1 45%;
+  /* Fund Section Styling */
+  .fund-section {
     background-color: #fff;
-    padding: 40px 30px;
-    border-radius: 15px;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    min-width: 280px;
+    padding: 80px 20px;
   }
 
-  .message h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #7b120a;
-  }
-
-  .message p {
-    font-size: 18px;
-    line-height: 1.7;
-  }
-
-  /* Right Column: Podcast Banner */
-  .podcast-banner {
-    flex: 1 1 45%;
-    background-color: #7b120a;
-    border-radius: 15px;
+  .fund-container {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    min-width: 280px;
+    gap: 60px;
+    flex-wrap: wrap;
   }
 
-  .podcast-banner img {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    max-height: 400px; /* keeps images uniform */
-    object-fit: cover;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+  /* Left Text Section */
+  .fund-text {
+    flex: 1 1 45%;
+    color: #333;
   }
 
-  .podcast-banner img:hover {
+  .fund-text h2 {
+    font-size: 40px;
+    color: #7b120a;
+    margin-bottom: 20px;
+  }
+
+  .fund-text p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+  }
+
+  /* Contribute Button */
+  .fund-btn {
+    display: inline-block;
+    background-color: #7b120a;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    box-shadow: 0 6px 20px rgba(123, 18, 10, 0.4);
+    transition: all 0.3s ease;
+    animation: pulse 1.5s infinite;
+  }
+
+  .fund-btn:hover {
+    background-color: #5c0e07;
     transform: scale(1.05);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    animation: none;
   }
 
-  /* --- Responsive --- */
-  @media (max-width: 1024px) {
-    .message h2 {
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(123, 18, 10, 0.6); }
+    70% { box-shadow: 0 0 0 10px rgba(123, 18, 10, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(123, 18, 10, 0); }
+  }
+
+  /* Right QR Code Section */
+  .fund-qr {
+    flex: 1 1 35%;
+    text-align: center;
+    background-color: #fdf5f4;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+
+  .fund-qr img {
+    width: 250px;
+    max-width: 90%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+
+  .qr-note {
+    font-size: 16px;
+    color: #7b120a;
+    font-weight: 500;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 900px) {
+    .fund-container {
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .fund-text, .fund-qr {
+      flex: 1 1 100%;
+      text-align: center;
+    }
+
+    .fund-text h2 {
       font-size: 32px;
     }
 
-    .message p {
+    .fund-text p {
       font-size: 17px;
     }
   }
 
-  @media (max-width: 900px) {
-    .message-podcast .container {
-      flex-direction: column;
-      gap: 25px;
-    }
-
-    .message, .podcast-banner {
-      flex: 1 1 100%;
-      width: 100%;
-    }
-
-    .message {
-      padding: 30px 20px;
-    }
-
-    .podcast-banner img {
-      max-height: none;
-    }
-  }
-
   @media (max-width: 480px) {
-    .message h2 {
+    .fund-text h2 {
       font-size: 28px;
     }
 
-    .message p {
+    .fund-btn {
       font-size: 16px;
-      line-height: 1.6;
+      padding: 12px 22px;
     }
 
-    .podcast-banner {
-      padding: 15px;
+    .fund-qr img {
+      width: 200px;
     }
   }
 </style>
 
 
-
-
-
+  
 
 
   <!-- ====== Footer Section ====== -->
