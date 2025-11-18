@@ -1,711 +1,798 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="chiyacut_logo.png" />
-
-  <title>चिया पिएर जाउ। ☕️ </title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    /* RESET */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  <title>Join as a Rider | Chiyacut</title>
+<style type="text/css">
+  
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
-      font-family: 'Poppins', sans-serif;
-      color: #fff;
+      font-family: "Poppins", sans-serif;
       background-color: #7b120a;
-      overflow-x: hidden;
-    }
-
-    a { text-decoration: none; color: inherit; }
-
-    /* HEADER WITH LOGO + BUTTON */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 50px;
-      background-color: rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(8px);
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
-
-    .logo {
-      width: 150px;
-      transition: transform 0.3s;
-    }
-    .logo:hover { transform: scale(1.05); }
-
-    .cta-btn {
-      background-color: #fff;
-      color: #7b120a;
-      padding: 12px 25px;
-      border-radius: 8px;
-      font-weight: 600;
-      animation: blink 1.5s infinite;
-      transition: all 0.3s;
-    }
-
-    @keyframes blink {
-      50% { opacity: 0.6; transform: scale(1.05); }
-    }
-
-    .cta-btn:hover {
-      background-color: #f5f5f5;
-      transform: scale(1.05);
-      animation: none;
-    }
-
-    
-
-    /* WHAT WE DO SECTION */
-    .what-we-do {
-      background: #fff;
-      color: #333;
-      text-align: center;
-      padding: 100px 20px;
-    }
-
-    .what-we-do h2 {
-      color: #7b120a;
-      font-size: 40px;
-      margin-bottom: 20px;
-    }
-
-    .what-we-do p {
-      font-size: 18px;
-      line-height: 1.8;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    
-
-    /* PODCAST SECTION */
-    .message-podcast {
-      background: #fff;
-      color: #333;
-      padding: 100px 20px;
-    }
-
-    .message-podcast .container {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .message {
-      flex: 1 1 45%;
-      background: #fff;
-      border-radius: 15px;
-      padding: 40px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
-
-    .message h2 {
-      font-size: 36px;
-      color: #7b120a;
-      margin-bottom: 15px;
-    }
-
-    .message p {
-      font-size: 18px;
-      line-height: 1.7;
-    }
-
-    .podcast-banner {
-      flex: 1 1 45%;
-      background: #7b120a;
-      padding: 20px;
-      border-radius: 15px;
-      text-align: center;
-    }
-
-    .podcast-banner img {
-      width: 100%;
-      height: 350px;
-      object-fit: cover;
-      border-radius: 12px;
-      transition: transform 0.3s;
-    }
-
-    .podcast-banner img:hover { transform: scale(1.05); }
-
-    
-
-    /* FOOTER */
-    footer {
-      background: #6a0f08;
       color: #fff;
-      text-align: center;
-      padding: 50px 20px;
-    }
-
-    footer .footer-container {
-      max-width: 1100px;
-      margin: auto;
+      min-height: 100vh;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      gap: 40px;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 30px 10px;
     }
 
-    footer h3 {
-      margin-bottom: 15px;
-    }
-
-    footer ul {
-      list-style: none;
-      line-height: 2;
-      font-size: 16px;
-    }
-
-    footer a:hover { text-decoration: underline; }
-
-    @media (max-width: 900px) {
-      .hero, .message-podcast .container, .fund-container {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .hero-text, .form-box, .fund-text, .fund-qr {
-        width: 100%;
-        max-width: 600px;
-      }
-
-      .hero-text h1 { font-size: 36px; }
-      .message h2 { font-size: 30px; }
-    }
-  </style>
-</head>
-
-<body>
-  <!-- HEADER -->
-  <header>
-    <img src="chiyacut_logo.png" alt="Chiyacut Logo" class="logo">
-    <a href="https://shorturl.at/i7CXi" target="_blank" class="cta-btn">Super Ride</a>
-  </header>
-
-
-  <!-- HEADER SCROLL EFFECT -->
-  <style>
-header.scrolled {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-</style>
-
-<script>
-  let lastScrollTop = 0;
-  const header = document.querySelector("header");
-
-  window.addEventListener("scroll", () => {
-    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (currentScroll > 50) {
-      header.classList.add("scrolled");
-    } else {
-      header.classList.remove("scrolled");
-    }
-
-    if (currentScroll > lastScrollTop && currentScroll > 100) {
-      header.classList.add("hide");
-    } else {
-      header.classList.remove("hide");
-    }
-
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-  });
-</script>
-
-
-<!-- 🌟 HERO SECTION START -->
-<section class="hero-section">
-  <div class="hero-overlay"></div>
-
-  <div class="hero-container">
-    <!-- LEFT SIDE: Text and Button -->
-    <div class="hero-left">
-      <h1 class="hero-title">Nepal's First Ride Hailing Community</h1>
-      <p class="hero-description">
-        <span class="tea-icon">☕</span> To joun the community, fill the form.
-      </p>
-      <a href="https://shorturl.at/i7CXi" class="hero-btn">Super Ride</a>
-    </div>
-
-    <!-- RIGHT SIDE: Google Form -->
-    <div class="hero-right">
-      <div class="form-box">
-        <iframe 
-          src="https://docs.google.com/forms/d/e/1FAIpQLSdfobtN5eqQ7hIoyClAHrtfUw_6Ay_bmzAUNuOvgmQjTsKhSw/viewform?embedded=true"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-          loading="lazy">
-        </iframe>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- 🌟 HERO SECTION END -->
-
-<style>
-/* HERO SECTION */
-.hero-section {
+ /* --- Header Row --- */
+.header-row {
   position: relative;
   width: 100%;
-  min-height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: center; /* centers logo */
   align-items: center;
-  background: url('your-background-image.jpg') center center/cover no-repeat;
-  color: white;
-  overflow: hidden;
-  padding: 50px 0;
-}
-
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.65);
-  z-index: 1;
-}
-
-.hero-container {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  width: 100%;
-  padding: 20px;
-  gap: 40px;
-}
-
-/* LEFT COLUMN */
-.hero-left {
-  flex: 1;
-  max-width: 50%;
-}
-
-.hero-title {
-  font-size: 3rem;
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
-
-.hero-description {
-  font-size: 1.1rem;
-  color: #f0f0f0;
-  line-height: 1.8;
   margin-bottom: 30px;
+  padding: 10px 40px;
 }
 
-.tea-icon {
-  font-size: 1.4rem;
-  margin-right: 6px;
+/* --- Logo --- */
+.logo {
+  width: 150px;
+  height: auto;
+  transition: transform 0.4s ease;
 }
 
-/* BUTTON */
-.hero-btn {
-  display: inline-block;
-  background: #ffcc00;
-  color: #000;
-  font-weight: 700;
-  padding: 14px 40px;
-  border-radius: 50px;
-  font-size: 1.1rem;
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* --- Super Ride Button --- */
+.super-ride-btn {
+  position: absolute;
+  right: 40px;
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
+  color: #fff;
+  padding: 12px 32px;
+  font-size: 18px;
+  font-weight: 600;
   text-decoration: none;
-  animation: blink 1.5s infinite;
+  border-radius: 50px;
+  box-shadow: 0 0 20px rgba(255, 107, 0, 0.6);
+  animation: pulseGlow 1.5s infinite;
   transition: all 0.3s ease;
 }
 
-.hero-btn:hover {
-  background: #000;
-  color: #fff;
+/* Blinking Effect */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 107, 0, 0.8), 0 0 20px rgba(255, 107, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 107, 0, 1), 0 0 50px rgba(255, 0, 128, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 107, 0, 0.8), 0 0 20px rgba(255, 107, 0, 0.4);
+  }
+}
+
+/* Hover + Click Animation */
+.super-ride-btn:hover {
   animation: none;
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 107, 0, 0.9);
+  background: linear-gradient(90deg, #ee0979, #ff6a00);
 }
 
-@keyframes blink {
-  0%, 100% { box-shadow: 0 0 20px #ffcc00; }
-  50% { box-shadow: 0 0 40px #ffcc00; }
+.super-ride-btn:active {
+  transform: scale(0.97);
 }
 
-/* RIGHT COLUMN (Form) */
-.hero-right {
-  flex: 1;
-  max-width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+/* Responsive */
+@media (max-width: 600px) {
+  .super-ride-btn {
+    position: static;
+    margin-top: 10px;
+  }
 
-.form-box {
-  width: 100%;
-  background: #fff;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
-  max-height: 85vh;
-}
-
-.form-box iframe {
-  width: 100%;
-  height: 85vh;
-  border: none;
-}
-
-/* RESPONSIVE DESIGN */
-@media (max-width: 992px) {
-  .hero-container {
+  .header-row {
     flex-direction: column;
+  }
+}
+
+
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    p.description {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 25px;
+    }
+
+    /* --- Form Box --- */
+    .form-box {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      width: 100%;
+      max-width: 720px;
+      height: 85vh;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+      margin-bottom: 40px;
+    }
+
+    .form-box::-webkit-scrollbar {
+      width: 6px;
+    }
+    .form-box::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 1400px;
+      border: none;
+      border-radius: 15px;
+    }
+
+ 
+/* ====== Footer Section ====== */
+.footer {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 60px 20px 25px;
+  color: #fff;
+  margin-top: 60px;
+  width: 100%;
+  text-align: left;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-section h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #ffb347;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a,
+.footer-section .social-icons a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.footer-section ul li a:hover,
+.footer-section .social-icons a:hover {
+  color: #ffb347;
+  text-decoration: underline;
+}
+
+.social-icons a {
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 15px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
     text-align: center;
   }
 
-  .hero-left, .hero-right {
-    max-width: 100%;
-  }
-
-  .hero-title {
-    font-size: 2.4rem;
-  }
-
-  .form-box {
-    max-height: 70vh;
+  .footer-section {
+    min-width: 100%;
   }
 }
 
-@media (max-width: 576px) {
-  .hero-title {
-    font-size: 2rem;
-  }
-
-  .hero-description {
-    font-size: 1rem;
-  }
-
-  .hero-btn {
-    font-size: 1rem;
-    padding: 12px 28px;
-  }
-}
-</style>
-
-<!-- 🎬 TIKTOK LIVE SECTION -->
-<section class="tiktok-live">
-  <div class="live-content">
-    <div class="live-text">
-      <h2>🎙️ We’re Live on TikTok!</h2>
-      <p>
-        Join us <strong>everyday from 8 PM - 9 PM</strong> on TikTok Live, where we
-        listen to riders’ doubts, solve their problems, and share real experiences
-        together. It’s your space to speak, learn, and grow with the community. 🚴‍♂️
-      </p>
-
-      <a href="https://www.tiktok.com/@chiyacut/live" target="_blank" class="live-btn">
-        🔴 Join Live Now
-      </a>
-    </div>
-
-    <div class="live-image">
-      <img src="tiktok.jpg" alt="TikTok Live with ChiyaCut" />
-    </div>
-  </div>
-</section>
-
-<style>
-/* 🎬 TIKTOK LIVE SECTION */
-.tiktok-live {
+/* ===== Restaurant Partner Slider ===== */
+.restaurant-slider {
+  position: relative;
+  overflow: hidden;
   width: 100%;
-  background: linear-gradient(135deg, #7b120a, #000);
-  color: #fff;
-  padding: 80px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.tiktok-live .live-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
   max-width: 1200px;
-  width: 100%;
-  flex-wrap: wrap;
-}
-
-/* Left Text */
-.live-text {
-  flex: 1;
-  min-width: 320px;
-}
-
-.live-text h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #fff;
-}
-
-.live-text p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 30px;
-}
-
-/* CTA Button */
-.live-btn {
-  background: #ff0050;
-  color: #fff;
-  text-decoration: none;
-  padding: 14px 30px;
-  font-size: 1.1rem;
-  border-radius: 50px;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 15px rgba(255, 0, 80, 0.6);
-  animation: pulse 1.5s infinite;
-}
-
-.live-btn:hover {
-  background: #e60045;
-  transform: scale(1.05);
-  animation: none;
-}
-
-/* Right Image */
-.live-image {
-  flex: 1;
-  min-width: 300px;
-  display: flex;
-  justify-content: center;
-}
-
-.live-image img {
-  width: 100%;
-  max-width: 500px;
+  margin: 70px auto;
   border-radius: 20px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
 }
 
-.live-image img:hover {
-  transform: scale(1.05);
+.restaurant-slide {
+  display: none;
+  width: 100%;
+  transition: opacity 1s ease-in-out;
 }
 
-/* Pulse Animation */
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(255, 0, 80, 0.7); }
-  70% { box-shadow: 0 0 0 20px rgba(255, 0, 80, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(255, 0, 80, 0); }
+.restaurant-slide.active {
+  display: block;
+  animation: fadeSlide 1s ease-in-out;
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Inside container */
+.restaurant-container {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  color: #fff;
+}
+
+/* Left Image */
+.restaurant-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.restaurant-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Right Info */
+.restaurant-info {
+  flex: 1.2;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.restaurant-name {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #ffb347;
+}
+
+.restaurant-info p {
+  font-size: 16px;
+  margin: 8px 0;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.restaurant-desc {
+  margin-top: 15px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Category Badges */
+.category {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #fff;
+}
+.category.premium {
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
+}
+.category.expensive {
+  background: linear-gradient(90deg, #ff4e50, #f9d423);
+}
+.category.economic {
+  background: linear-gradient(90deg, #56ab2f, #a8e063);
 }
 
 /* Responsive */
 @media (max-width: 900px) {
-  .tiktok-live {
+  .restaurant-container {
+    flex-direction: column;
+  }
+
+  .restaurant-info {
+    padding: 25px;
+  }
+
+  .restaurant-name {
+    font-size: 24px;
     text-align: center;
   }
 
-  .live-content {
-    flex-direction: column-reverse;
-  }
-
-  .live-text h2 {
-    font-size: 2rem;
-  }
-
-  .live-text p {
-    font-size: 1rem;
-  }
-
-  .live-btn {
-    margin-top: 10px;
-  }
-
-  .live-image img {
-    max-width: 400px;
+  .restaurant-info p {
+    text-align: center;
   }
 }
+
+.restaurant-image img {
+  width: 100%;
+  height: 350px;          /* makes all images same height */
+  object-fit: cover;      /* ensures image looks clean and not stretched */
+  border-radius: 15px;
+}
+
+/* --- Section Header --- */
+.section-header {
+  text-align: center;
+  margin: 60px auto 40px auto;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #ffcc00; /* Accent line color */
+  margin: 10px auto 0;
+  border-radius: 2px;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.section-description {
+  margin-top: 15px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Pulse animation for underline */
+@keyframes pulse {
+  0%, 100% { transform: scaleX(1); opacity: 0.7; }
+  50% { transform: scaleX(1.3); opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 26px;
+  }
+  .section-description {
+    font-size: 15px;
+  }
+}
+
 </style>
 
  
-  <!-- WHAT WE DO -->
-  <section class="what-we-do">
-    <h2>What We Do</h2>
+</head>
+<body>
+
+ <!-- Logo and Button Row -->
+<div class="header-row">
+  <img src="chiyacut_logo.png" alt="Chiyacut Logo" class="logo" />
+  <a href="https://shorturl.at/i7CXi" target="_blank" class="super-ride-btn">Super Ride 🚴‍♂️</a>
+</div>
+
+
+
+<!-- Full Screen Section -->
+<section class="full-screen-section">
+  <div class="section-content">
+    <h1>Nepal's First Ride Hailing Community</h1>
     <p>
-      At Chiyacut, we are dedicated to supporting Nepal’s ride-hailing community. We give riders a platform to raise their voices through social media, ensuring their concerns are heard. We collaborate with restaurants and cafes to provide comfortable and affordable food options, making daily life easier for riders. Beyond that, we stand by our riders during tough times by offering financial support for minor accidents, helping them stay safe and secure.
-
-To build a ride-hailing community where riders are valued, supported, and connected through care, safety, and convenience.
+      <span class="icon">☕</span>
+      Become part of Nepal’s fastest-growing riders community network. 
+      Fill out the form — it only takes a minute !
     </p>
-  </section>
-
-  <!-- FUNDRAISING SECTION -->
-<section class="fund-section">
-  <div class="fund-container">
-    <div class="fund-left">
-      <h2>Support Our Community❤️</h2>
-      <p>
-        This fund program is for riders support and betterment. No forced anyone to contribute but if you want to help our comminity then you can scan the QR.
-      </p>
-      <div class="fund-progress">
-        <div class="progress-bar">
-          <div class="progress-fill" style="width: 68%;"></div>
-        </div>
-        <p class="fund-raised">Raised: <strong>₨ 0</strong> / Goal: ₨ 50K</p>
-      </div>
-      <a href="#community-impact" target="" class="donate-btn">Our impacts 🚀</a>
-    </div>
-
-    <div class="fund-right">
-      <img src="qr.jpg" alt="Rider Support Image" />
+    <div class="form-box">
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdfobtN5eqQ7hIoyClAHrtfUw_6Ay_bmzAUNuOvgmQjTsKhSw/viewform?embedded=true"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0">
+        Loading…
+      </iframe>
     </div>
   </div>
 </section>
 
 <style>
-  /* FUNDRAISING SECTION */
-  .fund-section {
-    background: linear-gradient(135deg, #7b120a, #a52b20);
-    color: #fff;
-    padding: 100px 25px;
+  /* --- Full Screen Centered Section --- */
+  .full-screen-section {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    background-color: #7b120a;
+    color: #fff;
+    text-align: center;
+  }
+
+  .section-content {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .section-content h1 {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .section-content p {
+    font-size: 20px;
+    line-height: 1.8;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .section-content .icon {
+    font-size: 28px;
+  }
+
+  .form-box {
+    width: 100%;
+    max-width: 700px;
+    height: 800px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+  }
+
+  .form-box iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 15px;
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 900px) {
+    .section-content h1 {
+      font-size: 48px;
+    }
+    .section-content p {
+      font-size: 18px;
+    }
+    .form-box {
+      height: 700px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .section-content h1 {
+      font-size: 36px;
+    }
+    .section-content p {
+      font-size: 16px;
+    }
+    .form-box {
+      height: 600px;
+    }
+  }
+</style>
+
+
+<!-- What We Do Section -->
+<section class="what-we-do">
+  <div class="content">
+    <h2>What We Do</h2>
+    <p>
+      At <strong>Chiyacut</strong>, we are dedicated to supporting Nepal’s ride-hailing community. We give riders a platform to raise their voices through social media, ensuring their concerns are heard. We collaborate with restaurants and cafes to provide comfortable and affordable food options, making daily life easier for riders. Beyond that, we stand by our riders during tough times by offering financial support for minor accidents, helping them stay safe and secure.  
+      <br><br>
+      To build a ride-hailing community where riders are valued, supported, and connected through care, safety, and convenience.
+    </p>
+  </div>
+</section>
+
+<style>
+  /* --- What We Do Section --- */
+  .what-we-do {
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 100px 8%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .what-we-do .content {
+    max-width: 900px;
+    animation: fadeInUp 1.5s ease;
+  }
+
+  .what-we-do h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #7b120a;
+    margin-bottom: 25px;
+    position: relative;
+  }
+
+  .what-we-do h2::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: #ffcc00;
+    display: block;
+    margin: 12px auto 0;
+    border-radius: 2px;
+  }
+
+  .what-we-do p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  /* --- Animation --- */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 768px) {
+    .what-we-do {
+      padding: 70px 20px;
+    }
+
+    .what-we-do h2 {
+      font-size: 32px;
+    }
+
+    .what-we-do p {
+      font-size: 16px;
+      line-height: 1.7;
+    }
+  }
+</style>
+
+
+<!-- ===== Restaurant Partner Detail Slider Section ===== -->
+<!-- Section Header -->
+<div class="section-header">
+  <h2 class="section-title">RESTAURENTS/ CAFES</h2>
+  <p class="section-description">
+    We dedicated collabration with restaurant and cafes for our riders.
+    Now, they can hangout, relax and enjoying food at affordable cost.
+  </p>
+</div>
+
+
+<section class="restaurant-slider">
+  <div class="restaurant-slide active">
+    <div class="restaurant-container">
+      <div class="restaurant-image">
+        <img src="business/aamako_khana_ghar.jpg" alt="Aamako Khana Ghar">
+      </div>
+      <div class="restaurant-info">
+        <h2 class="restaurant-name"> Aamako Khana Ghar</h2>
+        <p><strong>📍 Location:</strong> Balaju chowk, Kathmandu</p>
+        <p><strong>📞 Contact:</strong> 9761729129</p>
+        <p><strong>🪑 Seat Capacity:</strong> 30</p>
+        <p><strong>🏷 Category:</strong> <span class="category premium"> Affordable</span></p>
+        <p class="restaurant-desc">
+          The restaurant provides clean, healthy food at affordable price. We have clean and comfertable space also have parking facility.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  
+</section>
+
+
+
+
+
+
+
+<!-- Support / Fund Section -->
+<section class="fund-section">
+  <div class="fund-container">
+    <div class="fund-text">
+      <h2>SUPPORT OUR MISSION</h2>
+      <p>
+        Your contribution helps us empower riders,
+        Every small support matters. 
+      </p>
+      <a href="https://shorturl.at/i7CXi" target="_blank" class="fund-btn">Join as Rider</a>
+    </div>
+
+    <div class="fund-qr">
+      <img src="qr.jpg" alt="Bank QR Code for Contribution">
+      <p class="qr-note">Scan this QR to send your support ❤️</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Fund Section Styling */
+  .fund-section {
+    background-color: #fff;
+    padding: 80px 20px;
   }
 
   .fund-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 50px;
     max-width: 1200px;
-    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
   }
 
-  .fund-left {
-    flex: 1;
-    min-width: 320px;
+  /* Left Text Section */
+  .fund-text {
+    flex: 1 1 45%;
+    color: #333;
   }
 
-  .fund-left h2 {
-    font-size: 45px;
-    font-weight: 800;
-    margin-bottom: 15px;
+  .fund-text h2 {
+    font-size: 40px;
+    color: #7b120a;
+    margin-bottom: 20px;
   }
 
-  .fund-left p {
+  .fund-text p {
     font-size: 18px;
-    color: rgba(255, 255, 255, 0.9);
-    line-height: 1.6;
+    line-height: 1.8;
     margin-bottom: 25px;
   }
 
-  .fund-progress {
-    margin-bottom: 30px;
-  }
-
-  .progress-bar {
-    background: rgba(255, 255, 255, 0.2);
-    height: 18px;
-    border-radius: 30px;
-    overflow: hidden;
-    margin-bottom: 10px;
-  }
-
-  .progress-fill {
-    background: #fff;
-    height: 100%;
-    border-radius: 30px;
-    width: 0;
-    animation: fillAnimation 2s ease forwards;
-  }
-
-  @keyframes fillAnimation {
-    from { width: 0; }
-    to { width: 68%; } /* Matches actual width in HTML inline style */
-  }
-
-  .fund-raised {
-    font-size: 16px;
-    font-weight: 500;
-  }
-
-  .donate-btn {
+  /* Contribute Button */
+  .fund-btn {
     display: inline-block;
-    padding: 14px 35px;
-    background: #fff;
-    color: #7b120a;
-    font-weight: 700;
-    border-radius: 50px;
+    background-color: #7b120a;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 8px;
     text-decoration: none;
     font-size: 18px;
+    font-weight: 600;
+    box-shadow: 0 6px 20px rgba(123, 18, 10, 0.4);
     transition: all 0.3s ease;
-    animation: pulse 2s infinite;
+    animation: pulse 1.5s infinite;
   }
 
-  .donate-btn:hover {
-    background: #ffdfd6;
-    color: #a52b20;
+  .fund-btn:hover {
+    background-color: #5c0e07;
+    transform: scale(1.05);
     animation: none;
   }
 
   @keyframes pulse {
-    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,255,255,0.4); }
-    50% { transform: scale(1.08); box-shadow: 0 0 25px rgba(255,255,255,0.3); }
+    0% { box-shadow: 0 0 0 0 rgba(123, 18, 10, 0.6); }
+    70% { box-shadow: 0 0 0 10px rgba(123, 18, 10, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(123, 18, 10, 0); }
   }
 
-  .fund-right {
-    flex: 1;
-    display: flex;
-    justify-content: center;
+  /* Right QR Code Section */
+  .fund-qr {
+    flex: 1 1 35%;
+    text-align: center;
+    background-color: #fdf5f4;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   }
 
-  .fund-right img {
-    width: 100%;
-    max-width: 480px;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  .fund-qr img {
+    width: 250px;
+    max-width: 90%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
   }
 
-  /* Responsive */
+  .qr-note {
+    font-size: 16px;
+    color: #7b120a;
+    font-weight: 500;
+  }
+
+  /* Responsive Design */
   @media (max-width: 900px) {
     .fund-container {
       flex-direction: column;
+      gap: 40px;
+    }
+
+    .fund-text, .fund-qr {
+      flex: 1 1 100%;
       text-align: center;
     }
 
-    .fund-left h2 {
-      font-size: 36px;
+    .fund-text h2 {
+      font-size: 32px;
     }
 
-    .fund-left p {
+    .fund-text p {
+      font-size: 17px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .fund-text h2 {
+      font-size: 28px;
+    }
+
+    .fund-btn {
       font-size: 16px;
+      padding: 12px 22px;
     }
 
-    .fund-right img {
-      max-width: 90%;
+    .fund-qr img {
+      width: 200px;
     }
   }
 </style>
@@ -714,574 +801,67 @@ To build a ride-hailing community where riders are valued, supported, and connec
   
 
 
-  <!-- PODCAST SECTION -->
-  <section class="message-podcast">
-    <div class="container">
-      <div class="message">
-        <h2>Rider Ko Gunaso</h2>
-        <p>We do podcast on YouTube with heros where we talk about their journey and experiences. Do whatch the podcast it will relate to you. 
-        </p>
+  <!-- ====== Footer Section ====== -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Social Media Section -->
+    <div class="footer-section">
+      <h3>Connect Us</h3>
+      <div class="social-icons">
+        <a href="https://www.tiktok.com/@chiyacut" target="_blank">📸 TikTok</a>
 
-        <!-- 🎥 WATCH NOW BUTTON -->
-<a href="https://www.youtube.com/playlist?list=PLnd17RlFfJOJMyJ9lgQAWQYKe1We0fZkn" 
-   target="_blank" 
-   class="watch-now-btn">
-  <span class="play-icon">▶</span>
-  <span class="watch-text">Watch Now</span>
-</a>
-
-<style>
-/* WATCH NOW BUTTON */
-.watch-now-btn {
-  display: inline-flex;
-  align-items: center;
-  background: #ff0000;
-  color: #fff;
-  font-weight: 600;
-  padding: 12px 24px;
-  border-radius: 50px;
-  font-size: 1.1rem;
-  text-decoration: none;
-  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.4);
-  transition: all 0.3s ease;
-  animation: pulse 1.5s infinite;
-}
-
-.play-icon {
-  background: #fff;
-  color: #ff0000;
-  border-radius: 50%;
-  width: 28px;
-  height: 28px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.9rem;
-  margin-right: 10px;
-  font-weight: bold;
-}
-
-.watch-now-btn:hover {
-  background: #cc0000;
-  animation: none;
-  transform: scale(1.05);
-}
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.6); }
-  70% { box-shadow: 0 0 0 15px rgba(255, 0, 0, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); }
-}
-
-/* Responsive */
-@media (max-width: 576px) {
-  .watch-now-btn {
-    font-size: 1rem;
-    padding: 10px 20px;
-  }
-  .play-icon {
-    width: 25px;
-    height: 25px;
-    font-size: 0.8rem;
-  }
-}
-</style>
-
-
+        <a href="https://www.youtube.com/@chiyacut" target="_blank">▶️ YouTube</a>
       </div>
-      <div class="podcast-banner">
-        <a href="https://www.youtube.com/playlist?list=PLnd17RlFfJOJMyJ9lgQAWQYKe1We0fZkn" target="_blank">
-          <img src="chiyacut_logo.png" alt="Chiyacut Podcast">
-        </a>
-      </div>
-      
     </div>
-  </section>
+
+   
+    <!-- Important Links 
 
 
+    <div class="footer-section">
+      <h3>Important Links</h3>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Super Ride</a></li>
 
-<!-- COMMUNITY STATS SECTION -->
-<section class="community-stats">
-  <div class="stats-header">
-    <h2>Our Growing Community</h2>
-    <p>Together, we’re building a stronger network that supports our heros.</p>
+      </ul>
+    </div>
+
+    <!-- Services 
+    <div class="footer-section">
+      <h3>Our Services</h3>
+      <ul>
+        <li><a href="#">Ride sharing awerness</a></li>
+        <li><a href="#">Comfort for riders</a></li>
+        <li><a href="#">Business collaboration</a></li>
+        <li><a href="#">Customer support</a></li>
+      </ul>
+    </div>
+  </div> -->
+
+  <div class="footer-bottom">
+    <p>© 2030 Chiyacut. All Rights Reserved.</p>
   </div>
+</footer> 
 
-  <div class="stats-grid">
-    <div class="stat-box">
-      <h3 id="members-count">0</h3>
-      <p>Total Members</p>
-    </div>
-
-    <div class="stat-box">
-      <h3 id="fund-count">0</h3>
-      <p>Funds Collected (NPR)</p>
-    </div>
-
-    <div class="stat-box">
-      <h3 id="impact-count">0</h3>
-      <p>Live Impacts</p>
-    </div>
-  </div>
-</section>
-
-<style>
-  
-  /* COMMUNITY STATS SECTION */
-.community-stats {
-  background: linear-gradient(135deg, #7b120a, #d63b31);
-  color: #fff;
-  padding: 100px 20px;
-  text-align: center;
-}
-
-.stats-header {
-  max-width: 800px;
-  margin: 0 auto 60px;
-}
-
-.stats-header h2 {
-  font-size: 3rem;
-  margin-bottom: 15px;
-  font-weight: 700;
-}
-
-.stats-header p {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.6;
-}
-
-.stats-grid {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.stat-box {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
-  padding: 40px 60px;
-  flex: 1 1 280px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(12px);
-  transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.stat-box:hover {
-  transform: translateY(-8px);
-  background: rgba(255, 255, 255, 0.25);
-}
-
-.stat-box h3 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-.stat-box p {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-/* RESPONSIVE DESIGN */
-@media (max-width: 768px) {
-  .stats-header h2 {
-    font-size: 2.2rem;
-  }
-  .stat-box {
-    padding: 30px 40px;
-  }
-  .stat-box h3 {
-    font-size: 2.2rem;
-  }
-}
-
-</style>
-  
-
-<!-- FAQ Section -->
-<section class="faq-section">
-  <h2 class="faq-header">Frequently Asked Questions</h2>
-  <p class="faq-subtitle">We’ve answered the most common questions from riders and partners.</p>
-
-  <div class="faq-container">
-    <div class="faq-item">
-      <div class="faq-question">
-        <h3>How can I join the community?</h3>
-        <span class="arrow">+</span>
-      </div>
-      <div class="faq-answer">
-        <p>Simply fill out our registration form available on this website.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question">
-        <h3>How to ba a ChiyaCut Hero?</h3>
-        <span class="arrow">+</span>
-      </div>
-      <div class="faq-answer">
-        <p>Anyone who is doing ride sharing, delivery related work they can be join with us as a ChiyaCut Hero. Please contact us if you want to be ChiyaCut Hero.</p>
-      </div>
-    </div>
-
-    
-</section>
-
-<style>
-  .faq-section {
-    width: 100%;
-    max-width: 1200px;
-    margin: 80px auto;
-    padding: 60px 20px;
-    color: #fff;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    backdrop-filter: blur(10px);
-    text-align: center;
-  }
-
-  .faq-header {
-    font-size: 38px;
-    margin-bottom: 10px;
-    color: #fff;
-    letter-spacing: 0.5px;
-  }
-
-  .faq-subtitle {
-    font-size: 16px;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 40px;
-  }
-
-  .faq-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  .faq-item {
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-  }
-
-  .faq-item:hover {
-    background: rgba(255, 255, 255, 0.25);
-  }
-
-  .faq-question {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    padding: 20px 25px;
-    font-size: 18px;
-    font-weight: 500;
-  }
-
-  .faq-question h3 {
-    margin: 0;
-    color: #fff;
-    font-weight: 500;
-  }
-
-  .faq-question .arrow {
-    font-size: 22px;
-    color: #fff;
-    transition: transform 0.3s ease;
-  }
-
-  .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    background: rgba(0, 0, 0, 0.2);
-    transition: max-height 0.4s ease;
-    padding: 0 25px;
-    text-align: left;
-  }
-
-  .faq-answer p {
-    font-size: 15px;
-    color: rgba(255, 255, 255, 0.9);
-    margin: 15px 0;
-    line-height: 1.6;
-  }
-
-  .faq-item.active .faq-answer {
-    max-height: 200px;
-    padding-bottom: 15px;
-  }
-
-  .faq-item.active .arrow {
-    transform: rotate(45deg);
-  }
-
-  @media (max-width: 768px) {
-    .faq-header {
-      font-size: 30px;
-    }
-    .faq-question {
-      padding: 16px 20px;
-      font-size: 16px;
-    }
-    .faq-answer p {
-      font-size: 14px;
-    }
-  }
-</style>
 
 <script>
-  document.querySelectorAll('.faq-question').forEach(button => {
-    button.addEventListener('click', () => {
-      const faqItem = button.parentElement;
-      faqItem.classList.toggle('active');
-    });
-  });
+  let slideIndex = 0;
+  const slides = document.querySelectorAll(".restaurant-slide");
+
+  function showSlides() {
+    slides.forEach(slide => slide.classList.remove("active"));
+    slideIndex = (slideIndex + 1) % slides.length;
+    slides[slideIndex].classList.add("active");
+  }
+
+  // Start with the first slide visible
+  slides[0].classList.add("active");
+
+  // Auto-slide every 5 seconds
+  setInterval(showSlides, 5000);
 </script>
 
-<!-- CONTACT US SECTION -->
-<section class="contact-section">
-  <h2 class="contact-title">Contact Us</h2>
-  <p class="contact-subtitle">We’d love to hear from you — reach out anytime!</p>
-
-  <div class="contact-container">
-    <!-- Left Column: Contact Info -->
-    <div class="contact-column">
-      <h3>Get In Touch</h3>
-      <div class="info-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Phone Icon" />
-        <div>
-          <h4>Phone</h4>
-          <a href="tel:+9779800000000">9868222043</a>
-        </div>
-      </div>
-
-      <div class="info-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
-        <div>
-          <h4>WhatsApp</h4>
-          <a href="https://wa.me/9868222043" target="_blank">9868222043</a>
-        </div>
-      </div>
-
-      <div class="info-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" />
-        <div>
-          <h4>Email</h4>
-          <a href="mailto:chiyacut@gmail.com">chiyacut@gmail.com</a>
-        </div>
-      </div>
-
-      <div class="info-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Address" />
-        <div>
-          <h4>Address</h4>
-          <p>Kathmandu, Nepal</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Right Column: Social Media -->
-
-    <div class="contact-column">
-      <h3>Follow Us</h3>
-       <!--
-      <div class="info-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" />
-        <div>
-          <h4>Facebook</h4>
-          <p>12K Followers</p>
-          <a href="https://facebook.com/chiyacut" target="_blank">Visit Page →</a>
-        </div>
-      </div>
-
-      <div class="info-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" />
-        <div>
-          <h4>Instagram</h4>
-          <p>8.5K Followers</p>
-          <a href="https://instagram.com/chiyacut" target="_blank">View Profile →</a>
-        </div>
-      </div>
-    -->
-
-      <div class="info-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
-        <div>
-          <h4>YouTube</h4>
-          <p>300+ Subscribers</p>
-          <a href="https://youtube.com/@chiyacut" target="_blank">View profile →</a>
-        </div>
-      </div>
-      <div class="info-card">
-         <img src="https://cdn-icons-png.flaticon.com/512/3046/3046122.png" alt="TikTok Icon" />
-        <div>
-          <h4>TikTok</h4>
-          <p>5000+ Followrs</p>
-          <a href="https://tiktok.com/@chiyacut" target="_blank">View profile →</a>
-        </div>
-      </div>
-
-      
-    </div>
-  </div>
-</section>
-
-<style>
-  /* Contact Section Container */
-  .contact-section {
-    background: linear-gradient(135deg, #7b120a, #b63d2a);
-    color: #fff;
-    padding: 90px 25px;
-    margin: 100px auto;
-    max-width: 1200px;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-    text-align: center;
-  }
-
-  .contact-title {
-    font-size: 45px;
-    font-weight: 800;
-    margin-bottom: 10px;
-  }
-
-  .contact-subtitle {
-    color: rgba(255,255,255,0.8);
-    font-size: 18px;
-    margin-bottom: 60px;
-  }
-
-  /* Columns Layout */
-  .contact-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 40px;
-  }
-
-  .contact-column {
-    flex: 1;
-    min-width: 320px;
-    background: rgba(255,255,255,0.1);
-    padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-  }
-
-  .contact-column:hover {
-    background: rgba(255,255,255,0.15);
-    transform: translateY(-5px);
-  }
-
-  .contact-column h3 {
-    font-size: 26px;
-    font-weight: 600;
-    margin-bottom: 25px;
-    border-bottom: 2px solid rgba(255,255,255,0.2);
-    display: inline-block;
-    padding-bottom: 8px;
-  }
-
-  /* Info Cards (Shared for both columns) */
-  .info-card {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    background: rgba(255,255,255,0.15);
-    padding: 18px 20px;
-    border-radius: 14px;
-    margin-bottom: 18px;
-    transition: all 0.3s ease;
-    text-align: left;
-  }
-
-  .info-card:hover {
-    background: rgba(255,255,255,0.25);
-    transform: translateY(-4px);
-  }
-
-  .info-card img {
-    width: 50px;
-    height: 50px;
-    border-radius: 10px;
-    background: #fff;
-    padding: 8px;
-  }
-
-  .info-card h4 {
-    font-size: 20px;
-    margin-bottom: 5px;
-  }
-
-  .info-card p, .info-card a {
-    color: rgba(255,255,255,0.85);
-    font-size: 15px;
-    text-decoration: none;
-  }
-
-  .info-card a:hover {
-    color: #fff;
-  }
-
-  @media (max-width: 900px) {
-    .contact-container {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .contact-column {
-      width: 90%;
-    }
-  }
-</style>
-
-
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-container">
-      <!--
-      <div>
-        <h3>Follow Us</h3>
-        <ul>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">YouTube</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Important Links</h3>
-        <ul>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Use</a></li>
-          <li><a href="#">Contact Us</a></li>
-        </ul>
-      </div> -->
-      <div>
-        <h3>Our Services</h3>
-        <ul>
-          <li>Rider support</li>
-          <li>Passenger support</li>
-          <li>Give them platform to speak</li>
-          
-        </ul>
-      </div>
-    </div>
-    <p style="margin-top:30px;">© 2025 Chiyacut. All Rights Reserved.</p>
-  </footer>
 </body>
 </html>
-
