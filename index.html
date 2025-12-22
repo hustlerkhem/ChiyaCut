@@ -1,1511 +1,1141 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="chiyacut_logo.png" />
-  <title>चिया पिएर जाउ।</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    /* RESET */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      color: #fff;
-      background-color: #7b120a;
-      overflow-x: hidden;
-    }
-
-    a { text-decoration: none; color: inherit; }
-
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ChiyaCut - Nepal's First Ride Hailing Community">
+    <meta name="theme-color" content="#7b120a">
     
+    <link rel="icon" type="image/png" href="chiyacut_logo.png" />
+    <title>ChiyaCut | Nepal's Ride Hailing Community</title>
     
-
-    /* WHAT WE DO SECTION */
-    .what-we-do {
-      background: #fff;
-      color: #333;
-      text-align: center;
-      padding: 100px 20px;
-    }
-
-    .what-we-do h2 {
-      color: #7b120a;
-      font-size: 40px;
-      margin-bottom: 20px;
-    }
-
-    .what-we-do p {
-      font-size: 18px;
-      line-height: 1.8;
-      max-width: 900px;
-      margin: auto;
-    }
-
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    /* PODCAST SECTION */
-    .message-podcast {
-      background: #fff;
-      color: #333;
-      padding: 100px 20px;
-    }
+    <style>
+      /* -----------------------------------------------------------
+         1. CORE VARIABLES & RESET
+      ----------------------------------------------------------- */
+      :root {
+        /* Brand Colors */
+        --primary: #7b120a;       
+        --primary-gradient: linear-gradient(135deg, #7b120a 0%, #a31d12 100%);
+        --accent: #ffcc00;        
+        --gold-luxury: #d4af37;   
+        --gold-gradient: linear-gradient(135deg, #d4af37 0%, #f1c40f 100%);
+        
+        /* Neutrals */
+        --dark: #0f0f0f;
+        --text-main: #2d2d2d;
+        --text-muted: #666666;
+        --light-bg: #f8f5f2;     
+        --white: #ffffff;
 
-    .message-podcast .container {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .message {
-      flex: 1 1 45%;
-      background: #fff;
-      border-radius: 15px;
-      padding: 40px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
-
-    .message h2 {
-      font-size: 36px;
-      color: #7b120a;
-      margin-bottom: 15px;
-    }
-
-    .message p {
-      font-size: 18px;
-      line-height: 1.7;
-    }
-
-    .podcast-banner {
-      flex: 1 1 45%;
-      background: #7b120a;
-      padding: 20px;
-      border-radius: 15px;
-      text-align: center;
-    }
-
-    .podcast-banner img {
-      width: 100%;
-      height: 350px;
-      object-fit: cover;
-      border-radius: 12px;
-      transition: transform 0.3s;
-    }
-
-    .podcast-banner img:hover { transform: scale(1.05); }
-
-    
-
-    /* FOOTER */
-    footer {
-      background: #6a0f08;
-      color: #fff;
-      text-align: center;
-      padding: 50px 20px;
-    }
-
-    footer .footer-container {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      gap: 40px;
-    }
-
-    footer h3 {
-      margin-bottom: 15px;
-    }
-
-    footer ul {
-      list-style: none;
-      line-height: 2;
-      font-size: 16px;
-    }
-
-    footer a:hover { text-decoration: underline; }
-
-    @media (max-width: 900px) {
-      .hero, .message-podcast .container, .fund-container {
-        flex-direction: column;
-        text-align: center;
+        /* UI Elements */
+        --radius-sm: 8px;
+        --radius-md: 16px;
+        --radius-lg: 32px;
+        --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        --shadow-glow: 0 0 20px rgba(123, 18, 10, 0.15);
+        
+        /* Animation */
+        --ease: cubic-bezier(0.23, 1, 0.32, 1);
       }
 
-      .hero-text, .form-box, .fund-text, .fund-qr {
-        width: 100%;
-        max-width: 600px;
-      }
-
-      .hero-text h1 { font-size: 36px; }
-      .message h2 { font-size: 30px; }
-    }
-  </style>
-</head>
-
-<body>
-  
-  <!-- 🌟 PROFESSIONAL RESPONSIVE NAVBAR -->
-<header class="navbar">
-  <div class="nav-container">
-    <!-- Logo -->
-    <div class="logo">
-      <img src="chiyacut_logo.png" alt="ChiyaCut Logo">
-      <span>ChiyaCut</span>
-    </div>
-
-    <!-- Navigation Links -->
-    <nav class="nav-links" id="navLinks">
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html { scroll-behavior: smooth; font-size: 16px; }
       
-      <a href="#contact-section">Contact Us</a>
+      body {
+        font-family: 'Poppins', sans-serif;
+        color: var(--text-main);
+        background-color: var(--light-bg);
+        overflow-x: hidden;
+        line-height: 1.6;
+      }
+
+      a { text-decoration: none; color: inherit; transition: all 0.3s var(--ease); }
+      ul { list-style: none; }
+      img { max-width: 100%; display: block; }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar { width: 10px; }
+      ::-webkit-scrollbar-track { background: var(--light-bg); }
+      ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+      ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+      /* -----------------------------------------------------------
+         2. UTILITIES & ANIMATIONS
+      ----------------------------------------------------------- */
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* Reveal Animation */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s var(--ease);
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Buttons */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 32px;
+        border-radius: 100px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: all 0.3s var(--ease);
+        cursor: pointer;
+        border: none;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .btn-primary {
+        background: var(--primary-gradient);
+        color: var(--white);
+        box-shadow: 0 4px 15px rgba(123, 18, 10, 0.3);
+      }
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(123, 18, 10, 0.4);
+      }
+
+      .btn-gold {
+        background: var(--gold-gradient);
+        color: var(--dark);
+        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+      }
+      .btn-gold:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(212, 175, 55, 0.5);
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .section-header h2 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--primary);
+        margin-bottom: 16px;
+        line-height: 1.2;
+      }
+      .section-header p {
+        color: var(--text-muted);
+        font-size: 1.1rem;
+      }
+
+      /* -----------------------------------------------------------
+         3. NAVBAR (Glassmorphism)
+      ----------------------------------------------------------- */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+      }
+
+      .nav-container {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+        font-size: 1.5rem;
+        color: var(--primary);
+      }
+      .logo img {
+        width: 45px;
+        height: 45px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      }
+
+      .nav-menu {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: var(--text-main);
+        position: relative;
+      }
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--primary);
+        transition: width 0.3s ease;
+      }
+      .nav-link:hover { color: var(--primary); }
+      .nav-link:hover::after { width: 100%; }
+
+      .nav-cta {
+        padding: 10px 24px;
+        border: 2px solid var(--primary);
+        border-radius: 50px;
+        color: var(--primary);
+        font-weight: 700;
+      }
+      .nav-cta:hover {
+        background: var(--primary);
+        color: white;
+      }
+
+      .mobile-toggle {
+        display: none;
+        font-size: 1.5rem;
+        color: var(--primary);
+        cursor: pointer;
+      }
+
+      /* -----------------------------------------------------------
+         4. HERO SECTION
+      ----------------------------------------------------------- */
+      .hero {
+        position: relative;
+        padding-top: 120px;
+        padding-bottom: 80px;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        background: url('heroimage.png') center/cover no-repeat fixed;
+      }
+
+      .hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);
+        z-index: 1;
+      }
+
+      .hero-container {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        width: 100%;
+      }
+
+      .hero-text { color: white; }
+      .hero-text h1 {
+        font-size: clamp(3rem, 5vw, 4.5rem);
+        line-height: 1.1;
+        font-weight: 800;
+        margin-bottom: 24px;
+      }
+      .hero-text .highlight { color: var(--accent); }
+      .hero-text p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        margin-bottom: 40px;
+        max-width: 500px;
+      }
+
+      .hero-form-wrapper {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        padding: 10px;
+        border-radius: 24px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        height: 600px;
+        transform: perspective(1000px) rotateY(-5deg);
+        transition: transform 0.5s ease;
+      }
+      .hero-form-wrapper:hover { transform: perspective(1000px) rotateY(0deg); }
+      .hero-form-wrapper iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 16px;
+      }
+
+      /* -----------------------------------------------------------
+         5. FEATURES / WHAT WE DO
+      ----------------------------------------------------------- */
+      .features { padding: 100px 0; background: var(--white); }
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+      .feature-card {
+        padding: 40px;
+        border-radius: var(--radius-md);
+        background: var(--light-bg);
+        transition: all 0.3s ease;
+        border: 1px solid transparent;
+      }
+      .feature-card:hover {
+        background: white;
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-10px);
+        border-color: rgba(123, 18, 10, 0.1);
+      }
+      .feature-icon {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 20px;
+      }
+      .feature-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        color: var(--dark);
+      }
+
+      /* -----------------------------------------------------------
+         6. TIKTOK LIVE (Dark Mode)
+      ----------------------------------------------------------- */
+      .live-section {
+        background: #000;
+        color: white;
+        padding: 100px 0;
+        overflow: hidden;
+        position: relative;
+      }
+      /* Ambient Glow */
+      .live-section::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -20%;
+        width: 800px;
+        height: 800px;
+        background: radial-gradient(circle, rgba(123,18,10,0.4) 0%, rgba(0,0,0,0) 70%);
+        pointer-events: none;
+      }
+
+      .live-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      .live-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #ff0050;
+        padding: 6px 16px;
+        border-radius: 100px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        margin-bottom: 24px;
+        box-shadow: 0 0 20px rgba(255, 0, 80, 0.4);
+        animation: pulse 2s infinite;
+      }
+
+      .live-content h2 { font-size: 3rem; margin-bottom: 20px; line-height: 1.1; }
+      .live-content p { color: #a0a0a0; margin-bottom: 40px; font-size: 1.1rem; }
+      
+      .tiktok-card {
+        position: relative;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        transform: rotate(3deg);
+        border: 4px solid rgba(255,255,255,0.1);
+        box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        transition: transform 0.4s ease;
+      }
+      .tiktok-card:hover { transform: rotate(0deg) scale(1.02); }
+
+      /* -----------------------------------------------------------
+         7. PODCAST
+      ----------------------------------------------------------- */
+      .podcast { padding: 100px 0; }
+      .podcast-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 50px;
+        align-items: center;
+        background: white;
+        border-radius: var(--radius-lg);
+        padding: 50px;
+        box-shadow: var(--shadow-lg);
+      }
+      .podcast-img {
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        height: 100%;
+        min-height: 350px;
+      }
+      .podcast-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+      .podcast-wrapper:hover .podcast-img img { transform: scale(1.05); }
+
+      /* -----------------------------------------------------------
+         8. PRO MEMBERSHIP (LUXURY)
+      ----------------------------------------------------------- */
+      .pro-section {
+        padding: 120px 0;
+        background: #0a0a0a;
+        background-image: radial-gradient(circle at 50% 0%, #2a0a0a 0%, #000000 100%);
+        color: white;
+        position: relative;
+        border-top: 4px solid var(--gold-luxury);
+        border-bottom: 4px solid var(--gold-luxury);
+      }
+
+      .pro-header-content { text-align: center; margin-bottom: 60px; }
+      .pro-badge {
+        color: var(--gold-luxury);
+        border: 1px solid var(--gold-luxury);
+        padding: 8px 24px;
+        border-radius: 100px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.85rem;
+        display: inline-block;
+        margin-bottom: 24px;
+      }
+      .pro-header-content h2 {
+        font-size: 3.5rem;
+        background: var(--gold-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 20px;
+      }
+      
+      .benefits-list {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 60px;
+      }
+      .benefit-item {
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.1);
+        padding: 10px 24px;
+        border-radius: 100px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .benefit-item i { color: var(--gold-luxury); }
+
+      /* BIG QR CARDS */
+      .qr-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-bottom: 60px;
+      }
+      
+      .qr-card {
+        background: white;
+        border-radius: var(--radius-lg);
+        padding: 30px;
+        text-align: center;
+        transition: all 0.4s var(--ease);
+        position: relative;
+        border: 4px solid transparent;
+      }
+      .qr-card:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 20px 50px rgba(212, 175, 55, 0.2);
+        border-color: var(--gold-luxury);
+      }
+
+      .qr-brand {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-weight: 800;
+        color: var(--dark);
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+      }
+      .qr-img-box {
+        background: #f5f5f5;
+        padding: 15px;
+        border-radius: var(--radius-md);
+        position: relative;
+        overflow: hidden;
+      }
+      .qr-img-box img { width: 100%; height: auto; mix-blend-mode: multiply; }
+      
+      /* Scan Animation */
+      .scan-laser {
+        position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+        background: rgba(255, 0, 0, 0.8);
+        box-shadow: 0 0 15px red;
+        animation: scan 2.5s infinite linear;
+        display: none;
+      }
+      .qr-card:hover .scan-laser { display: block; }
+
+      @keyframes scan { 0% { top: 0; } 50% { top: 100%; } 100% { top: 0; } }
+
+      /* -----------------------------------------------------------
+         9. JOIN COMMUNITY (Bento Style)
+      ----------------------------------------------------------- */
+      .community { padding: 100px 0; background: var(--dark); color: white; text-align: center; }
+      
+      .social-bento {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 40px;
+        flex-wrap: wrap;
+      }
+      .social-box {
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.1);
+        padding: 20px 40px;
+        border-radius: var(--radius-lg);
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+      .social-box:hover { background: rgba(255,255,255,0.15); transform: translateY(-5px); }
+      .social-box i { font-size: 1.5rem; }
+      .fa-youtube { color: #ff0000; }
+      .fa-tiktok { color: #00f2ea; }
+
+      /* -----------------------------------------------------------
+         10. FUNDRAISING
+      ----------------------------------------------------------- */
+      .fundraising {
+        background: var(--primary-gradient);
+        color: white;
+        padding: 100px 0;
+      }
+      .fund-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+      .fund-info {
+        background: rgba(255,255,255,0.1);
+        backdrop-filter: blur(10px);
+        padding: 50px;
+        border-radius: var(--radius-lg);
+        border: 1px solid rgba(255,255,255,0.1);
+      }
+      .progress-track {
+        background: rgba(0,0,0,0.3);
+        height: 20px;
+        border-radius: 10px;
+        margin: 30px 0 10px;
+        overflow: hidden;
+      }
+      .progress-bar {
+        width: 0%; /* JS will animate */
+        height: 100%;
+        background: var(--accent);
+        border-radius: 10px;
+        transition: width 2s ease;
+      }
+      .fund-stats { display: flex; justify-content: space-between; font-weight: 600; }
+
+      /* -----------------------------------------------------------
+         11. TESTIMONIALS (Masonry/Grid)
+      ----------------------------------------------------------- */
+      .reviews { padding: 100px 0; background: var(--light-bg); }
+      .review-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+      }
+      .review-card {
+        background: white;
+        padding: 40px;
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-sm);
+        position: relative;
+        transition: transform 0.3s ease;
+      }
+      .review-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); }
+      .review-quote {
+        font-size: 2rem;
+        color: rgba(123, 18, 10, 0.1);
+        position: absolute;
+        top: 20px;
+        right: 30px;
+      }
+      .review-text { font-style: italic; color: var(--text-muted); margin-bottom: 30px; font-size: 1.05rem; }
+      .reviewer {
+        display: flex; align-items: center; gap: 15px; border-top: 1px solid #eee; padding-top: 20px;
+      }
+      .reviewer img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
+      .verified { color: #1da1f2; font-size: 0.9rem; margin-left: 5px; }
+      .stars { margin-left: auto; color: var(--accent); }
+
+      /* -----------------------------------------------------------
+         12. FAQ & CONTACT
+      ----------------------------------------------------------- */
+      .faq { padding: 100px 0; background: white; }
+      .faq-item {
+        border: 1px solid #eee;
+        border-radius: var(--radius-md);
+        margin-bottom: 15px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      .faq-item:hover { border-color: var(--primary); }
+      .faq-header {
+        padding: 20px 30px;
+        background: var(--light-bg);
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 600;
+        color: var(--primary);
+      }
+      .faq-body {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 30px;
+        transition: all 0.4s ease;
+        background: white;
+      }
+      .faq-item.active .faq-body { padding: 20px 30px; max-height: 200px; }
+      .faq-icon { transition: transform 0.3s; }
+      .faq-item.active .faq-icon { transform: rotate(45deg); }
+
+      .contact { padding: 100px 0; background: var(--light-bg); }
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+      }
+      .contact-card {
+        background: white;
+        padding: 40px;
+        border-radius: var(--radius-md);
+        text-align: center;
+        box-shadow: var(--shadow-sm);
+        transition: transform 0.3s;
+      }
+      .contact-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+      .contact-icon {
+        width: 60px; height: 60px;
+        background: rgba(123, 18, 10, 0.1);
+        color: var(--primary);
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1.5rem;
+        margin: 0 auto 20px;
+      }
+
+      /* -----------------------------------------------------------
+         13. FOOTER
+      ----------------------------------------------------------- */
+      footer {
+        background: var(--dark);
+        color: white;
+        padding: 80px 0 30px;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 50px;
+        margin-bottom: 60px;
+      }
+      .footer-col h4 { color: var(--accent); margin-bottom: 24px; font-size: 1.2rem; }
+      .footer-col ul li { margin-bottom: 12px; color: #aaa; transition: 0.3s; cursor: pointer; }
+      .footer-col ul li:hover { color: white; transform: translateX(5px); }
+      .copyright {
+        text-align: center;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding-top: 30px;
+        color: #666;
+        font-size: 0.9rem;
+      }
+
+      /* -----------------------------------------------------------
+         MEDIA QUERIES
+      ----------------------------------------------------------- */
+      @keyframes pulse { 0% {opacity:1} 50% {opacity:0.7} 100% {opacity:1} }
+
+      @media (max-width: 992px) {
+        .hero-container, .live-grid, .fund-grid, .podcast-wrapper, .qr-grid {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+        .hero-text { margin-bottom: 50px; }
+        .hero-form-wrapper { transform: none; height: 600px; }
+        .podcast-wrapper { padding: 30px; }
+        .nav-menu {
+          position: fixed; top: 80px; left: 0; width: 100%;
+          background: white; flex-direction: column; padding: 40px;
+          transform: translateY(-150%); transition: 0.4s ease;
+          box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .nav-menu.active { transform: translateY(0); }
+        .mobile-toggle { display: block; }
+        .qr-grid { gap: 40px; max-width: 450px; margin: 0 auto 60px; }
+        .section-header h2, .hero-text h1, .pro-header-content h2 { font-size: 2.5rem; }
+        .benefits-list { flex-direction: column; align-items: center; }
+      }
+
+
+      
+    </style>
+  </head>
+
+  <body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+      <div class="container nav-container">
+        <div class="logo">
+          <img src="chiyacut_logo.png" alt="ChiyaCut">
+          <span>ChiyaCut</span>
+        </div>
+        
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#pro-membership" class="nav-link" style="color:var(--primary);">Pro Membership</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="#pro-membership" class="nav-cta">Join Now</a></li>
+        </ul>
+        
+        <div class="mobile-toggle" id="mobileToggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
     </nav>
 
-    <!-- Mobile Menu Toggle -->
-    <div class="menu-toggle" id="menuToggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-</header>
-
-<style>
-/* 🌟 NAVBAR WRAPPER */
-.navbar {
-  width: 100%;
-  background-color: #ffffff;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-}
-
-.nav-container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 12px 6%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* 🌟 LOGO */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo img {
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
-  border-radius: 8px; /* square logo with soft corners */
-}
-
-.logo span {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #7b120a;
-  letter-spacing: 0.5px;
-}
-
-/* 🌟 MENU LINKS */
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-
-.nav-links a {
-  position: relative;
-  text-decoration: none;
-  color: #333;
-  font-weight: 600;
-  font-size: 1rem;
-  letter-spacing: 0.3px;
-  transition: color 0.3s ease;
-}
-
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background-color: #7b120a;
-  transition: all 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #7b120a;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-/* 🌟 MOBILE MENU TOGGLE */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 6px;
-}
-
-.menu-toggle span {
-  width: 26px;
-  height: 3px;
-  background-color: #7b120a;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-/* 🌟 REMOVE GAP BELOW NAVBAR */
-body {
-  margin: 0;
-  padding-top: 80px; /* ensures hero content isn't hidden behind navbar */
-}
-
-/* 🌟 RESPONSIVE DESIGN */
-@media (max-width: 900px) {
-  .nav-links {
-    position: absolute;
-    top: 80px;
-    right: 0;
-    width: 100%;
-    background: #fff8f5;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-    gap: 25px;
-    transform: translateY(-200%);
-    opacity: 0;
-    transition: all 0.4s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  }
-
-  .nav-links.active {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-
-  .logo span {
-    font-size: 1.3rem;
-  }
-}
-</style>
-
-<script>
-/* 🌟 MENU TOGGLE FUNCTION */
-document.getElementById('menuToggle').addEventListener('click', function() {
-  document.getElementById('navLinks').classList.toggle('active');
-});
-</script>
-
-
-
-<!-- 🌟 HERO SECTION START -->
-<section class="hero-section">
-  <div class="hero-overlay"></div>
-
-  <div class="hero-container">
-    <!-- LEFT SIDE: Text and Button -->
-    <div class="hero-left">
-      <h1 class="hero-title">Nepal's First Ride Hailing Community</h1>
-      <p class="hero-description">
-        <span class="tea-icon">☕</span> To joun the community, fill the form.
-      </p>
-      <a href="https://shorturl.at/i7CXi" class="hero-btn">Super Ride</a>
-    </div>
-
-    <!-- RIGHT SIDE: Google Form -->
-    <div class="hero-right">
-      <div class="form-box">
-        <iframe 
-          src="https://docs.google.com/forms/d/e/1FAIpQLSdfobtN5eqQ7hIoyClAHrtfUw_6Ay_bmzAUNuOvgmQjTsKhSw/viewform?embedded=true"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-          loading="lazy">
-        </iframe>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- 🌟 HERO SECTION END -->
-
-<style>
-/* HERO SECTION */
-.hero-section {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: url('your-background-image.jpg') center center/cover no-repeat;
-  color: white;
-  overflow: hidden;
-  padding: 50px 0;
-}
-
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.65);
-  z-index: 1;
-}
-
-.hero-container {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  width: 100%;
-  padding: 20px;
-  gap: 40px;
-}
-
-/* LEFT COLUMN */
-.hero-left {
-  flex: 1;
-  max-width: 50%;
-}
-
-.hero-title {
-  font-size: 3rem;
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
-
-.hero-description {
-  font-size: 1.1rem;
-  color: #f0f0f0;
-  line-height: 1.8;
-  margin-bottom: 30px;
-}
-
-.tea-icon {
-  font-size: 1.4rem;
-  margin-right: 6px;
-}
-
-/* BUTTON */
-.hero-btn {
-  display: inline-block;
-  background: #ffcc00;
-  color: #000;
-  font-weight: 700;
-  padding: 14px 40px;
-  border-radius: 50px;
-  font-size: 1.1rem;
-  text-decoration: none;
-  animation: blink 1.5s infinite;
-  transition: all 0.3s ease;
-}
-
-.hero-btn:hover {
-  background: #000;
-  color: #fff;
-  animation: none;
-}
-
-@keyframes blink {
-  0%, 100% { box-shadow: 0 0 20px #ffcc00; }
-  50% { box-shadow: 0 0 40px #ffcc00; }
-}
-
-/* RIGHT COLUMN (Form) */
-.hero-right {
-  flex: 1;
-  max-width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.form-box {
-  width: 100%;
-  background: #fff;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
-  max-height: 85vh;
-}
-
-.form-box iframe {
-  width: 100%;
-  height: 85vh;
-  border: none;
-}
-
-/* RESPONSIVE DESIGN */
-@media (max-width: 992px) {
-  .hero-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-left, .hero-right {
-    max-width: 100%;
-  }
-
-  .hero-title {
-    font-size: 2.4rem;
-  }
-
-  .form-box {
-    max-height: 70vh;
-  }
-}
-
-@media (max-width: 576px) {
-  .hero-title {
-    font-size: 2rem;
-  }
-
-  .hero-description {
-    font-size: 1rem;
-  }
-
-  .hero-btn {
-    font-size: 1rem;
-    padding: 12px 28px;
-  }
-}
-</style>
-
-<!-- 🎬 TIKTOK LIVE SECTION -->
-<section class="tiktok-live">
-  <div class="live-content">
-    <div class="live-text">
-      <h2>🎙️ We’re Live on TikTok!</h2>
-      <p>
-        Join us <strong>everyday from 8 PM - 9 PM</strong> on TikTok Live, where we
-        listen to riders’ doubts, solve their problems, and share real experiences
-        together. It’s your space to speak, learn, and grow with the community. 🚴‍♂️
-      </p>
-
-      <a href="https://www.tiktok.com/@chiyacut/live" target="_blank" class="live-btn">
-        🔴 Join Live Now
-      </a>
-    </div>
-
-    <div class="live-image">
-      <img src="tiktok.jpg" alt="TikTok Live with ChiyaCut" />
-    </div>
-  </div>
-</section>
-
-<style>
-/* 🎬 TIKTOK LIVE SECTION */
-.tiktok-live {
-  width: 100%;
-  background: linear-gradient(135deg, #7b120a, #000);
-  color: #fff;
-  padding: 80px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.tiktok-live .live-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  max-width: 1200px;
-  width: 100%;
-  flex-wrap: wrap;
-}
-
-/* Left Text */
-.live-text {
-  flex: 1;
-  min-width: 320px;
-}
-
-.live-text h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #fff;
-}
-
-.live-text p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 30px;
-}
-
-/* CTA Button */
-.live-btn {
-  background: #ff0050;
-  color: #fff;
-  text-decoration: none;
-  padding: 14px 30px;
-  font-size: 1.1rem;
-  border-radius: 50px;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 15px rgba(255, 0, 80, 0.6);
-  animation: pulse 1.5s infinite;
-}
-
-.live-btn:hover {
-  background: #e60045;
-  transform: scale(1.05);
-  animation: none;
-}
-
-/* Right Image */
-.live-image {
-  flex: 1;
-  min-width: 300px;
-  display: flex;
-  justify-content: center;
-}
-
-.live-image img {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 20px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
-}
-
-.live-image img:hover {
-  transform: scale(1.05);
-}
-
-/* Pulse Animation */
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(255, 0, 80, 0.7); }
-  70% { box-shadow: 0 0 0 20px rgba(255, 0, 80, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(255, 0, 80, 0); }
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .tiktok-live {
-    text-align: center;
-  }
-
-  .live-content {
-    flex-direction: column-reverse;
-  }
-
-  .live-text h2 {
-    font-size: 2rem;
-  }
-
-  .live-text p {
-    font-size: 1rem;
-  }
-
-  .live-btn {
-    margin-top: 10px;
-  }
-
-  .live-image img {
-    max-width: 400px;
-  }
-}
-</style>
-
- 
-  <!-- WHAT WE DO -->
-  <section class="what-we-do">
-    <h2>What We Do</h2>
-    <p>
-      At Chiyacut, we are dedicated to supporting Nepal’s ride-hailing community. We give riders a platform to raise their voices through social media, ensuring their concerns are heard. We collaborate with restaurants and cafes to provide comfortable and affordable food options, making daily life easier for riders. Beyond that, we stand by our riders during tough times by offering financial support for minor accidents, helping them stay safe and secure.
-
-To build a ride-hailing community where riders are valued, supported, and connected through care, safety, and convenience.
-    </p>
-  </section>
-
-  <!-- FUNDRAISING SECTION -->
-<section class="fund-section">
-  <div class="fund-container">
-    <div class="fund-left">
-      <h2>Support Our Community❤️</h2>
-      <p>
-        This fund program is for riders support and betterment. No forced anyone to contribute but if you want to help our comminity then you can scan the QR.
-      </p>
-      <div class="fund-progress">
-        <div class="progress-bar">
-          <div class="progress-fill" style="width: 68%;"></div>
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+      <div class="container hero-container">
+        <div class="hero-text reveal">
+          <h1>Nepal's First <br><span class="highlight">Ride Hailing</span> Community</h1>
+          <p>Join the largest network of riders building a safer, stronger community together.</p>
+          <a href="#pro-membership"class="btn btn-primary">
+            <span>Start Your Journey</span> <i class="fas fa-arrow-right"></i>
+          </a>
         </div>
-        <p class="fund-raised">Raised: <strong>₨ 0</strong> / Goal: ₨ 50K</p>
+        <!--
+        <div class="hero-form-wrapper reveal">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdfobtN5eqQ7hIoyClAHrtfUw_6Ay_bmzAUNuOvgmQjTsKhSw/viewform?embedded=true">Loading...</iframe>
+        </div>-->
       </div>
-      <a href="#community-impact" target="" class="donate-btn">Our impacts 🚀</a>
-    </div>
-
-    <div class="fund-right">
-      <img src="qr.jpg" alt="Rider Support Image" />
-    </div>
-  </div>
-</section>
-
-<style>
-  /* FUNDRAISING SECTION */
-  .fund-section {
-    background: linear-gradient(135deg, #7b120a, #a52b20);
-    color: #fff;
-    padding: 100px 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .fund-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 50px;
-    max-width: 1200px;
-    width: 100%;
-  }
-
-  .fund-left {
-    flex: 1;
-    min-width: 320px;
-  }
-
-  .fund-left h2 {
-    font-size: 45px;
-    font-weight: 800;
-    margin-bottom: 15px;
-  }
-
-  .fund-left p {
-    font-size: 18px;
-    color: rgba(255, 255, 255, 0.9);
-    line-height: 1.6;
-    margin-bottom: 25px;
-  }
-
-  .fund-progress {
-    margin-bottom: 30px;
-  }
-
-  .progress-bar {
-    background: rgba(255, 255, 255, 0.2);
-    height: 18px;
-    border-radius: 30px;
-    overflow: hidden;
-    margin-bottom: 10px;
-  }
-
-  .progress-fill {
-    background: #fff;
-    height: 100%;
-    border-radius: 30px;
-    width: 0;
-    animation: fillAnimation 2s ease forwards;
-  }
-
-  @keyframes fillAnimation {
-    from { width: 0; }
-    to { width: 68%; } /* Matches actual width in HTML inline style */
-  }
-
-  .fund-raised {
-    font-size: 16px;
-    font-weight: 500;
-  }
-
-  .donate-btn {
-    display: inline-block;
-    padding: 14px 35px;
-    background: #fff;
-    color: #7b120a;
-    font-weight: 700;
-    border-radius: 50px;
-    text-decoration: none;
-    font-size: 18px;
-    transition: all 0.3s ease;
-    animation: pulse 2s infinite;
-  }
-
-  .donate-btn:hover {
-    background: #ffdfd6;
-    color: #a52b20;
-    animation: none;
-  }
-
-  @keyframes pulse {
-    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,255,255,0.4); }
-    50% { transform: scale(1.08); box-shadow: 0 0 25px rgba(255,255,255,0.3); }
-  }
-
-  .fund-right {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-  }
-
-  .fund-right img {
-    width: 100%;
-    max-width: 480px;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-  }
-
-  /* Responsive */
-  @media (max-width: 900px) {
-    .fund-container {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .fund-left h2 {
-      font-size: 36px;
-    }
-
-    .fund-left p {
-      font-size: 16px;
-    }
-
-    .fund-right img {
-      max-width: 90%;
-    }
-  }
-</style>
-
-
-  <!-- 🌟 COMING SOON SECTION -->
-<section class="coming-soon">
-  <div class="coming-content">
-    <h2>Our App is Coming Soon!</h2>
-    <p>Get ready to experience ChiyaCut at your fingertips. Stay tuned for launch updates and exclusive offers.</p>
-    <a href="#" class="btn-notify">Notify Me</a>
-  </div>
-</section>
-
-<!-- 🌈 STYLE -->
-<style>
-.coming-soon {
-  width: 100%;
-  min-height: 500px; /* minimum height */
-  background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e'); /* Google/Unsplash image */
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* stick while scrolling */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-.coming-content {
-  text-align: center;
-  color: #fff;
-  background-color: rgba(0,0,0,0.4); /* semi-transparent for readability */
-  padding: 30px 20px;
-  border-radius: 15px;
-  max-width: 700px;
-}
-
-.coming-content h2 {
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: 20px;
-}
-
-.coming-content p {
-  font-size: 1.2rem;
-  margin-bottom: 25px;
-}
-
-.btn-notify {
-  background: #7b120a;
-  color: #fff;
-  padding: 14px 28px;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.btn-notify:hover {
-  background: #ff7b5a;
-  transform: scale(1.05);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .coming-content h2 {
-    font-size: 2rem;
-  }
-
-  .coming-content p {
-    font-size: 1rem;
-  }
-}
-</style>
+    </section>
 
 
 
-  <!-- PODCAST SECTION -->
-  <section class="message-podcast">
-    <div class="container">
-      <div class="message">
-        <h2>Rider Ko Gunaso</h2>
-        <p>We do podcast on YouTube with heros where we talk about their journey and experiences. Do whatch the podcast it will relate to you. 
-        </p>
+    <!-- FEATURES -->
+    <section class="features" id="about">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>What We Do</h2>
+          <p>We are more than just a ride-sharing group. We are a family that supports each other through thick and thin.</p>
+        </div>
 
-        <!-- 🎥 WATCH NOW BUTTON -->
-<a href="https://www.youtube.com/playlist?list=PLnd17RlFfJOJMyJ9lgQAWQYKe1We0fZkn" 
-   target="_blank" 
-   class="watch-now-btn">
-  <span class="play-icon">▶</span>
-  <span class="watch-text">Watch Now</span>
-</a>
-
-<style>
-/* WATCH NOW BUTTON */
-.watch-now-btn {
-  display: inline-flex;
-  align-items: center;
-  background: #ff0000;
-  color: #fff;
-  font-weight: 600;
-  padding: 12px 24px;
-  border-radius: 50px;
-  font-size: 1.1rem;
-  text-decoration: none;
-  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.4);
-  transition: all 0.3s ease;
-  animation: pulse 1.5s infinite;
-}
-
-.play-icon {
-  background: #fff;
-  color: #ff0000;
-  border-radius: 50%;
-  width: 28px;
-  height: 28px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.9rem;
-  margin-right: 10px;
-  font-weight: bold;
-}
-
-.watch-now-btn:hover {
-  background: #cc0000;
-  animation: none;
-  transform: scale(1.05);
-}
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.6); }
-  70% { box-shadow: 0 0 0 15px rgba(255, 0, 0, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); }
-}
-
-/* Responsive */
-@media (max-width: 576px) {
-  .watch-now-btn {
-    font-size: 1rem;
-    padding: 10px 20px;
-  }
-  .play-icon {
-    width: 25px;
-    height: 25px;
-    font-size: 0.8rem;
-  }
-}
-</style>
-
-
+        <div class="features-grid">
+          <div class="feature-card reveal">
+            <div class="feature-icon"><i class="fas fa-bullhorn"></i></div>
+            <h3>A Voice for Riders</h3>
+            <p>We provide a platform for riders to raise their concerns and ensure their voices are heard across social media.</p>
+          </div>
+          
+          <div class="feature-card reveal">
+            <div class="feature-icon"><i class="fas fa-hand-holding-heart"></i></div>
+            <h3>Support</h3>
+            <p>On-ground support for riders during minor accidents or difficult times. We stand by you.</p>
+          </div>
+        </div>
       </div>
-      <div class="podcast-banner">
-        <a href="https://www.youtube.com/playlist?list=PLnd17RlFfJOJMyJ9lgQAWQYKe1We0fZkn" target="_blank">
-          <img src="meet-up1.jpeg" alt="Chiyacut Podcast">
-        </a>
+    </section>
+
+    <!-- TIKTOK LIVE -->
+    <section class="live-section">
+      <div class="container live-grid">
+        <div class="live-content reveal">
+          <div class="live-badge"><i class="fas fa-circle"></i> LIVE NOW</div>
+          <h2>Join the Conversation <br>on TikTok</h2>
+          <p>Every night from <strong>8 PM - 9 PM</strong>. We solve problems, share stories, and build connections live on air.</p>
+          <a href="https://www.tiktok.com/@chiyacut/live" target="_blank" class="btn btn-primary" style="background: #fff; color: #000;">
+            <i class="fab fa-tiktok"></i> Watch Stream
+          </a>
+        </div>
+        <div class="live-image reveal">
+          <div class="tiktok-card">
+            <img src="tiktok.jpg" alt="ChiyaCut Live">
+          </div>
+        </div>
       </div>
-      
-    </div>
-  </section>
+    </section>
 
-  
-
-  <!-- 🌟 JOIN OUR COMMUNITY SECTION -->
-<section class="join-community">
-  <div class="community-content">
-    <h2>🎥 Join Our Growing Ride Hailing Community</h2>
-    <p>
-      Be part of the ChiyaCut movement!  
-      Follow us on <strong>TikTok</strong> for real stories and updates,  
-      and Subscribe to our <strong>YouTube</strong> channel to watch podcasts, turorials and community impacts.
-    </p>
-
-    <div class="social-buttons">
-      <a href="https://www.youtube.com/@chiyacut" target="_blank" class="yt-btn">
-        <i class="fa-brands fa-youtube"></i> Subscribe on YouTube
-      </a>
-      <a href="https://www.tiktok.com/@chiyacut" target="_blank" class="tt-btn">
-        <i class="fa-brands fa-tiktok"></i> Follow on TikTok
-      </a>
-    </div>
-  </div>
-
-  <div class="community-visual">
-    <img src="rkgg.jpg" alt="Join ChiyaCut Community">
-  </div>
-</section>
-
-<!-- Font Awesome for Icons -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-<style>
-/* 🌟 JOIN OUR COMMUNITY SECTION */
-.join-community {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 80px 10%;
-  background: linear-gradient(135deg, #000, #7b120a);
-  color: #fff;
-  flex-wrap: wrap;
-  gap: 40px;
-}
-
-.community-content {
-  flex: 1;
-  min-width: 300px;
-  text-align: left;
-}
-
-.community-content h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 15px;
-  color: #ffcc00;
-}
-
-.community-content p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 30px;
-}
-
-/* BUTTON STYLES */
-.social-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.social-buttons a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: 600;
-  border-radius: 30px;
-  padding: 14px 28px;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.yt-btn {
-  background-color: #ff0000;
-  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
-}
-
-.tt-btn {
-  background-color: #000;
-  border: 2px solid #ffcc00;
-  box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
-}
-
-.yt-btn:hover {
-  background-color: #fff;
-  color: #ff0000;
-  transform: scale(1.05);
-}
-
-.tt-btn:hover {
-  background-color: #ffcc00;
-  color: #000;
-  transform: scale(1.05);
-}
-
-/* VISUAL SECTION */
-.community-visual {
-  flex: 1;
-  min-width: 320px;
-  display: flex;
-  justify-content: center;
-}
-
-.community-visual img {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-  animation: float 4s ease-in-out infinite;
-}
-
-/* FLOATING ANIMATION */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-/* RESPONSIVE DESIGN */
-@media (max-width: 992px) {
-  .join-community {
-    flex-direction: column-reverse;
-    text-align: center;
-  }
-
-  .community-content {
-    text-align: center;
-  }
-
-  .social-buttons {
-    justify-content: center;
-  }
-
-  .community-visual img {
-    max-width: 400px;
-  }
-
-  .community-content h2 {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .community-content h2 {
-    font-size: 1.7rem;
-  }
-  .community-content p {
-    font-size: 1rem;
-  }
-  .social-buttons a {
-    padding: 12px 22px;
-    font-size: 0.9rem;
-  }
-}
-</style>
-
-
-
-
-<!-- FAQ Section -->
-<section class="faq-section">
-  <h2 class="faq-header">Frequently Asked Questions</h2>
-  <p class="faq-subtitle">We’ve answered the most common questions from riders and partners.</p>
-
-  <div class="faq-container">
-    <div class="faq-item">
-      <div class="faq-question">
-        <h3>How can I join the community?</h3>
-        <span class="arrow">+</span>
+    <!-- PODCAST -->
+    <section class="podcast">
+      <div class="container">
+        <div class="podcast-wrapper reveal">
+          <div class="podcast-img">
+            <img src="podcast.png" alt="Podcast">
+          </div>
+          <div class="podcast-text">
+            <h2 style="font-size: 2.5rem; color: var(--primary); font-weight: 800; margin-bottom: 20px;">Rider Ko Gunaso</h2>
+            <p style="margin-bottom: 30px; font-size: 1.1rem; color: #555;">
+              Real stories from real heroes. We invite riders to share their journeys, struggles, and triumphs on our YouTube podcast. It's raw, unfiltered, and inspiring.
+            </p>
+            <a href="https://www.youtube.com/playlist?list=PLnd17RlFfJOJMyJ9lgQAWQYKe1We0fZkn" target="_blank" class="btn btn-primary">
+              <i class="fas fa-play"></i> Watch Episodes
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="faq-answer">
-        <p>Simply fill out our registration form available on this website.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question">
-        <h3>How to ba a ChiyaCut Hero?</h3>
-        <span class="arrow">+</span>
-      </div>
-      <div class="faq-answer">
-        <p>Anyone who is doing ride sharing, delivery related work they can be join with us as a ChiyaCut Hero. Please contact us if you want to be ChiyaCut Hero.</p>
-      </div>
-    </div>
+    </section>
 
     
-</section>
 
-<style>
-  .faq-section {
-    width: 100%;
-    max-width: 1200px;
-    margin: 80px auto;
-    padding: 60px 20px;
-    color: #fff;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    backdrop-filter: blur(10px);
-    text-align: center;
-  }
+    <!-- PRO MEMBERSHIP (LUXURY BIG QR) -->
+    <section class="pro-section" id="pro-membership">
+      <div class="container">
+        <div class="pro-header-content reveal">
+          <span class="pro-badge">ChiyaCut Membership</span>
+          <h2>Become a ChiyaCut Pro Member</h2>
+          <p style="color: #ccc; max-width: 600px; margin: 0 auto;">
+            ChiyaCut को Paid member बन्न चाहानुहुन्छ भने:</br>
+            फाइदाहरु </br></br>
 
-  .faq-header {
-    font-size: 38px;
-    margin-bottom: 10px;
-    color: #fff;
-    letter-spacing: 0.5px;
-  }
+            1. भिड बाट अलग,  राम्रो community पाउनुहुने छ।</br>
+            2. खास support को लाभ पाउनुहुने छ।</br>
+            3. भेटघाट कार्यक्रममा सहभागिता गराइनेछ।</br>
+            4. Member हरुलाई हरेक कुरामा पहिलो प्राथमिकता मिल्नेछ। </br></br>
 
-  .faq-subtitle {
-    font-size: 16px;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 40px;
-  }
+            Paid membership को मुल्य Rs 120 रहेको छ।</br></br>
 
-  .faq-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
+            पैसा QR मा हालिसकेपछी, statement को photo Upload  गरिदिनुहोला।</br></br>
 
-  .faq-item {
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-  }
+            [ Note: Membership 3 month मा renew गर्नुपर्ने छ। ]
+          </p>
+        </div>
 
-  .faq-item:hover {
-    background: rgba(255, 255, 255, 0.25);
-  }
+        <div class="benefits-list reveal">
+          <div class="benefit-item"><i class="fas fa-check-circle"></i> Pro Member</div>
+          <div class="benefit-item"><i class="fas fa-bolt"></i> Priority Support</div>
+          <div class="benefit-item"><i class="fas fa-fire"></i> Community </div>
+        </div>
 
-  .faq-question {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    padding: 20px 25px;
-    font-size: 18px;
-    font-weight: 500;
-  }
+        <!-- BIG QR GRID -->
+        <div class="qr-grid reveal">
+          <!-- ESEWA -->
+          <div class="qr-card">
+            <div class="qr-brand" style="color: #60bb46;"><i class="fas fa-wallet"></i> Esewa</div>
+            <div class="qr-img-box">
+              <div class="scan-laser"></div>
+              <!-- REPLACE 'qr.jpg' WITH ESEWA QR -->
+              <img src="esewa.jpg" alt="Esewa QR">
+            </div>
+            <p style="margin-top: 20px; color: #555; font-size: 0.9rem;">Scan to pay via Esewa</p>
+          </div>
 
-  .faq-question h3 {
-    margin: 0;
-    color: #fff;
-    font-weight: 500;
-  }
+          <!-- KHALTI -->
+          <div class="qr-card">
+            <div class="qr-brand" style="color: #5c2d91;"><i class="fas fa-wallet"></i> Khalti</div>
+            <div class="qr-img-box">
+              <div class="scan-laser"></div>
+              <!-- REPLACE 'qr.jpg' WITH KHALTI QR -->
+              <img src="khalti.jpg" alt="Khalti QR">
+            </div>
+            <p style="margin-top: 20px; color: #555; font-size: 0.9rem;">Scan to pay via Khalti</p>
+          </div>
 
-  .faq-question .arrow {
-    font-size: 22px;
-    color: #fff;
-    transition: transform 0.3s ease;
-  }
+          <!-- BANK -->
+          <div class="qr-card">
+            <div class="qr-brand" style="color: var(--primary);"><i class="fas fa-university"></i> Bank</div>
+            <div class="qr-img-box">
+              <div class="scan-laser"></div>
+              <!-- REPLACE 'qr.jpg' WITH BANK QR -->
+              <img src="bank.jpg" alt="Bank QR">
+            </div>
+            <p style="margin-top: 20px; color: #555; font-size: 0.9rem;">Mobile Banking Transfer</p>
+          </div>
+        </div>
 
-  .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    background: rgba(0, 0, 0, 0.2);
-    transition: max-height 0.4s ease;
-    padding: 0 25px;
-    text-align: left;
-  }
-
-  .faq-answer p {
-    font-size: 15px;
-    color: rgba(255, 255, 255, 0.9);
-    margin: 15px 0;
-    line-height: 1.6;
-  }
-
-  .faq-item.active .faq-answer {
-    max-height: 200px;
-    padding-bottom: 15px;
-  }
-
-  .faq-item.active .arrow {
-    transform: rotate(45deg);
-  }
-
-  @media (max-width: 768px) {
-    .faq-header {
-      font-size: 30px;
-    }
-    .faq-question {
-      padding: 16px 20px;
-      font-size: 16px;
-    }
-    .faq-answer p {
-      font-size: 14px;
-    }
-  }
-</style>
-
-<script>
-  document.querySelectorAll('.faq-question').forEach(button => {
-    button.addEventListener('click', () => {
-      const faqItem = button.parentElement;
-      faqItem.classList.toggle('active');
-    });
-  });
-</script>
-
-<!-- CONTACT US SECTION -->
-<section class="contact-section" id="contact-section">
-  <h2 class="contact-title">Contact Us</h2>
-  <p class="contact-subtitle">We’d love to hear from you — reach out anytime!</p>
-
-  <div class="contact-container">
-    <!-- Left Column: Contact Info -->
-    <div class="contact-column">
-      <h3>Get In Touch</h3>
-      <div class="info-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Phone Icon" />
-        <div>
-          <h4>Phone</h4>
-          <a href="tel:+9779800000000">9868222043</a>
+        <div style="text-align: center;" class="reveal">
+          <p style="color: #888; margin-bottom: 20px;">Step 2: After payment, fill the application form.</p>
+          <a href="https://forms.gle/w9KGomajkE5GPL9t9" target="_blank" class="btn btn-gold">
+            Apply for Pro <i class="fas fa-arrow-right"></i>
+          </a>
         </div>
       </div>
+    </section>
 
-      <div class="info-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
-        <div>
-          <h4>WhatsApp</h4>
-          <a href="https://wa.me/9868222043" target="_blank">9868222043</a>
+    <!-- COMMUNITY -->
+    <section class="community">
+      <div class="container reveal">
+        <h2>Join The Movement</h2>
+        <p style="color: #aaa; margin: 10px 0 30px;">Follow us for daily updates and stories.</p>
+        
+        <div class="social-bento">
+          <a href="https://www.youtube.com/@chiyacut" target="_blank" class="social-box">
+            <i class="fab fa-youtube"></i> Subscribe (YouTube)
+          </a>
+          <a href="https://www.tiktok.com/@chiyacut" target="_blank" class="social-box">
+            <i class="fab fa-tiktok"></i> Follow (TikTok)
+          </a>
+        </div>
+        
+        <div style="margin-top: 60px;">
+          <img src="meet-up1.jpeg" alt="Community" style="border-radius: 20px; margin: 0 auto; box-shadow: 0 20px 60px rgba(255,255,255,0.1);">
         </div>
       </div>
-
-      <div class="info-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" />
-        <div>
-          <h4>Email</h4>
-          <a href="mailto:chiyacut@gmail.com">chiyacut@gmail.com</a>
-        </div>
-      </div>
-
-      <div class="info-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Address" />
-        <div>
-          <h4>Address</h4>
-          <p>Kathmandu, Nepal</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Right Column: Social Media -->
-
-    <div class="contact-column">
-      <h3>Follow Us</h3>
-       <!--
-      <div class="info-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" />
-        <div>
-          <h4>Facebook</h4>
-          <p>12K Followers</p>
-          <a href="https://facebook.com/chiyacut" target="_blank">Visit Page →</a>
-        </div>
-      </div>
-
-      <div class="info-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" />
-        <div>
-          <h4>Instagram</h4>
-          <p>8.5K Followers</p>
-          <a href="https://instagram.com/chiyacut" target="_blank">View Profile →</a>
-        </div>
-      </div>
-    -->
-
-      <div class="info-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
-        <div>
-          <h4>YouTube</h4>
-          <p>300+ Subscribers</p>
-          <a href="https://youtube.com/@chiyacut" target="_blank">View profile →</a>
-        </div>
-      </div>
-      <div class="info-card">
-         <img src="https://cdn-icons-png.flaticon.com/512/3046/3046122.png" alt="TikTok Icon" />
-        <div>
-          <h4>TikTok</h4>
-          <p>6000+ Followrs</p>
-          <a href="https://tiktok.com/@chiyacut" target="_blank">View profile →</a>
-        </div>
-      </div>
-
-      
-    </div>
-  </div>
-</section>
-
-
-<style>
-  /* Contact Section Container */
-  .contact-section {
-    background: linear-gradient(135deg, #7b120a, #b63d2a);
-    color: #fff;
-    padding: 90px 25px;
-    margin: 100px auto;
-    max-width: 1200px;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-    text-align: center;
-  }
-
-  .contact-title {
-    font-size: 45px;
-    font-weight: 800;
-    margin-bottom: 10px;
-  }
-
-  .contact-subtitle {
-    color: rgba(255,255,255,0.8);
-    font-size: 18px;
-    margin-bottom: 60px;
-  }
-
-  /* Columns Layout */
-  .contact-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 40px;
-  }
-
-  .contact-column {
-    flex: 1;
-    min-width: 320px;
-    background: rgba(255,255,255,0.1);
-    padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-  }
-
-  .contact-column:hover {
-    background: rgba(255,255,255,0.15);
-    transform: translateY(-5px);
-  }
-
-  .contact-column h3 {
-    font-size: 26px;
-    font-weight: 600;
-    margin-bottom: 25px;
-    border-bottom: 2px solid rgba(255,255,255,0.2);
-    display: inline-block;
-    padding-bottom: 8px;
-  }
-
-  /* Info Cards (Shared for both columns) */
-  .info-card {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    background: rgba(255,255,255,0.15);
-    padding: 18px 20px;
-    border-radius: 14px;
-    margin-bottom: 18px;
-    transition: all 0.3s ease;
-    text-align: left;
-  }
-
-  .info-card:hover {
-    background: rgba(255,255,255,0.25);
-    transform: translateY(-4px);
-  }
-
-  .info-card img {
-    width: 50px;
-    height: 50px;
-    border-radius: 10px;
-    background: #fff;
-    padding: 8px;
-  }
-
-  .info-card h4 {
-    font-size: 20px;
-    margin-bottom: 5px;
-  }
-
-  .info-card p, .info-card a {
-    color: rgba(255,255,255,0.85);
-    font-size: 15px;
-    text-decoration: none;
-  }
-
-  .info-card a:hover {
-    color: #fff;
-  }
-
-  @media (max-width: 900px) {
-    .contact-container {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .contact-column {
-      width: 90%;
-    }
-  }
-</style>
+    </section>
 
 
 
-
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-container">
-      <!--
-      <div>
-        <h3>Follow Us</h3>
-        <ul>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">YouTube</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Important Links</h3>
-        <ul>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Use</a></li>
-          <li><a href="#">Contact Us</a></li>
-        </ul>
-      </div> -->
-      <div>
-        <h3>Our Services</h3>
-        <ul>
-          <li>Rider support</li>
-          <li>Passenger support</li>
-          <li>Give them platform to speak</li>
+    <!-- FUNDRAISING 
+    <section class="fundraising" id="fund">
+      <div class="container fund-grid">
+        <div class="fund-info reveal">
+          <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 20px;">Community Fund ❤️</h2>
+          <p style="margin-bottom: 30px; opacity: 0.9;">
+            This fund is dedicated to rider welfare. Your small contribution helps us provide medical aid and support to riders in need.
+          </p>
           
-        </ul>
+          <div class="progress-container">
+            <div class="progress-track">
+              <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+            </div>
+            <div class="fund-stats">
+              <span>Raised: Rs. 0</span>
+              <span>Goal: Rs. 50,000</span>
+            </div>
+          </div>
+          
+          <button class="btn btn-gold" style="margin-top: 30px;">See Our Impact</button>
+        </div>
+        <div class="qr-box reveal" style="text-align: center;">
+          <img src="" alt="Donate" style="border-radius: 20px; max-width: 400px; margin: auto; box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
+        </div>
       </div>
-    </div>
-    <p style="margin-top:30px;">© 2025 Chiyacut. All Rights Reserved.</p>
-  </footer>
-</body>
-</html>
+    </section>-->
 
+    <!-- TESTIMONIALS 
+    <section class="reviews">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Voices of the Road</h2>
+        </div>
+        
+        <div class="review-grid">
+          <div class="review-card reveal">
+            <i class="fas fa-quote-right review-quote"></i>
+            <p class="review-text">"Before ChiyaCut, riding felt lonely. Now I have a brotherhood. The emergency fund helped me fix my bike instantly after a crash."</p>
+            <div class="reviewer">
+              <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=100" alt="User">
+              <div>
+                <h4>Rabin Thapa <i class="fas fa-check-circle verified"></i></h4>
+                <small>Full-time Rider</small>
+              </div>
+              <div class="stars"><i class="fas fa-star"></i> 5.0</div>
+            </div>
+          </div>
 
+          <div class="review-card reveal">
+            <i class="fas fa-quote-right review-quote"></i>
+            <p class="review-text">"The Pro Membership pays for itself. I save Rs. 2000/month on food alone. Plus, the verified badge gets me more respect."</p>
+            <div class="reviewer">
+              <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100" alt="User">
+              <div>
+                <h4>Suman K.C. <i class="fas fa-crown verified" style="color:gold"></i></h4>
+                <small>Pro Member</small>
+              </div>
+              <div class="stars"><i class="fas fa-star"></i> 5.0</div>
+            </div>
+          </div>
+
+          <div class="review-card reveal">
+            <i class="fas fa-quote-right review-quote"></i>
+            <p class="review-text">"I feel safer riding with ChiyaCut verified heroes. Knowing they are part of a responsible community gives me peace of mind."</p>
+            <div class="reviewer">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" alt="User">
+              <div>
+                <h4>Anjali G.</h4>
+                <small>Passenger</small>
+              </div>
+              <div class="stars"><i class="fas fa-star"></i> 4.8</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ 
+    <section class="faq">
+      <div class="container" style="max-width: 800px;">
+        <div class="section-header reveal">
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        
+        <div class="faq-item reveal">
+          <div class="faq-header">
+            How do I join? <i class="fas fa-plus faq-icon"></i>
+          </div>
+          <div class="faq-body">
+            <p>Simply fill out the registration form at the top of this page. It takes less than 2 minutes!</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-header">
+            How to become a ChiyaCut Hero? <i class="fas fa-plus faq-icon"></i>
+          </div>
+          <div class="faq-body">
+            <p>Any rider can join. To get the "Hero" badge, you need to apply for Pro Membership and pass a basic verification check.</p>
+          </div>
+        </div>
+      </div>
+    </section>-->
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Get In Touch</h2>
+        </div>
+        
+        <div class="contact-grid reveal">
+          <div class="contact-card">
+            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+            <h4>Phone</h4>
+            <a href="tel:+9779868222043">9868222043</a>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+            <h4>WhatsApp</h4>
+            <a href="https://wa.me/9868222043">Chat Now</a>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <h4>Email</h4>
+            <a href="mailto:chiyacut@gmail.com">chiyacut@gmail.com</a>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <h4>Location</h4>
+            <p>Kathmandu, Nepal</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h4>Our Services</h4>
+            <ul>
+              <li>Rider Support</li>
+              <li>Passenger Safety</li>
+              <li>Voice for Voiceless</li>
+              <li>Events</li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Community</h4>
+            <ul>
+              <li><a href="https://youtube.com/@chiyacut">YouTube</a></li>
+              <li><a href="https://tiktok.com/@chiyacut">TikTok</a></li>
+              <li><a href="#pro-membership">Pro Membership</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>About ChiyaCut</h4>
+            <p style="color: #aaa; font-size: 0.9rem;">
+              Building Nepal's first and largest ride-hailing community based on trust, safety, and mutual support.
+            </p>
+          </div>
+        </div>
+        <div class="copyright">
+          &copy; 2025 ChiyaCut. All Rights Reserved
+        </div>
+      </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+      // 1. Reveal Animation
+      const revealElements = document.querySelectorAll('.reveal');
+      const revealOnScroll = () => {
+        const windowHeight = window.innerHeight;
+        const elementVisible = 100;
+        revealElements.forEach((reveal) => {
+          const elementTop = reveal.getBoundingClientRect().top;
+          if (elementTop < windowHeight - elementVisible) {
+            reveal.classList.add('active');
+          }
+        });
+      };
+      window.addEventListener('scroll', revealOnScroll);
+      revealOnScroll(); // Trigger on load
+
+      // 2. Mobile Menu
+      const toggle = document.getElementById('mobileToggle');
+      const navMenu = document.getElementById('navMenu');
+      toggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+
+      // 3. FAQ Toggle
+      const faqHeaders = document.querySelectorAll('.faq-header');
+      faqHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+          const item = header.parentElement;
+          item.classList.toggle('active');
+        });
+      });
+
+      // 4. Progress Bar Animation
+      setTimeout(() => {
+        document.getElementById('progressBar').style.width = '68%';
+      }, 1000);
+    </script>
+  </body>
+  </html>
