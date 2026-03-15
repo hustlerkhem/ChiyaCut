@@ -3,376 +3,609 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Largest Gig Community in Nepal </title>
-    <!-- Google Fonts: Poppins for a modern look -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
+    <title>Nepali #1 Ride Sharing Community</title>
+    <!-- Premium Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style type="text/css">
-        /* --- VARIABLES --- */
-:root {
-    --theme-color: #7b120a; /* Deep Red */
-    --theme-dark: #5a0d07;
-    --text-dark: #222;
-    --text-gray: #555;
-    --white: #fff;
-    --bg-light: #f4f6f8;
-    --shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-/* --- RESET --- */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Poppins', sans-serif; color: var(--text-dark); line-height: 1.6; }
-a { text-decoration: none; color: inherit; }
-ul { list-style: none; }
-
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-/* --- NAVBAR & LOGO STYLING --- */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.98); /* Slightly more opaque */
-    backdrop-filter: blur(10px);
-    height: 80px; /* Increased slightly for the logo */
-    display: flex;
-    align-items: center;
-    z-index: 1000;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-/* Brand Identity Wrapper */
-.brand-identity {
-    display: flex;
-    align-items: center;
-    gap: 12px; /* Space between Image and Text */
-    text-decoration: none;
-}
-
-/* The Logo Image */
-.logo-img {
-    height: 50px; /* Fixed height to fit navbar */
-    width: auto;  /* Maintains aspect ratio */
-    object-fit: contain;
-}
-
-/* Text Container */
-.logo-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    line-height: 1;
-}
-
-/* Main Business Name */
-.logo-text .name {
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: var(--text-dark);
-    letter-spacing: -0.5px;
-}
-
-.logo-text .highlight {
-    color: var(--theme-color); /* Your Red #7b120a */
-}
-
-/* Small Tagline under the name */
-.logo-text .tagline {
-    font-size: 0.75rem;
-    color: var(--text-gray);
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    margin-top: 2px;
-}
-
-/* Adjust nav links for the new height */
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-}
-
-/* --- RESPONSIVE LOGO --- */
-@media (max-width: 600px) {
-    .navbar {
-        height: 70px;
-    }
-
-    .logo-img {
-        height: 40px; /* Smaller logo on mobile */
-    }
-
-    .logo-text .name {
-        font-size: 1.3rem;
-    }
     
-    .logo-text .tagline {
-        display: none; /* Hide tagline on very small screens to save space */
-    }
-}
+    <style>
+        /* --- PREMIUM VARIABLES --- */
+        :root {
+            --brand-red: #7b120a;
+            --brand-red-light: #9a1a10;
+            --bg-color: #f8fafc; /* Very soft cool white */
+            --surface: rgba(255, 255, 255, 0.85); /* Glass effect */
+            --surface-solid: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            
+            --border-solid: #e2e8f0;
+            
+            --shadow-sm: 0 4px 6px -1px rgba(0,0,0,0.03), 0 2px 4px -1px rgba(0,0,0,0.02);
+            --shadow-hover: 0 20px 25px -5px rgba(123, 18, 10, 0.1), 0 10px 10px -5px rgba(123, 18, 10, 0.04);
+            
+            --radius-lg: 24px;
+            --radius-md: 16px;
+            --radius-sm: 8px;
+            
+            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-/* --- HERO SUPPORT SECTION --- */
-.hero-section {
-    position: relative;
-    min-height: 90vh; /* Takes up most of the screen */
-    background: url('meet-up1.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    padding-top: 100px; /* Space for navbar */
-    padding-bottom: 60px;
-    display: flex;
-    align-items: center;
-}
+        /* --- RESET & TYPOGRAPHY --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            line-height: 1.6; 
+            overflow-x: hidden;
+        }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
 
-.hero-overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(135deg, rgba(123,18,10,0.9), rgba(40,40,40,0.8));
-    z-index: 1;
-}
+        /* --- AMBIENT BACKGROUND (Mesh Gradient Effect) --- */
+        .ambient-bg { position: fixed; border-radius: 50%; filter: blur(100px); opacity: 0.15; z-index: -1; pointer-events: none; }
+        .ambient-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: var(--brand-red); }
+        .ambient-2 { bottom: -10%; right: -10%; width: 40vw; height: 40vw; background: #e11d48; }
 
-.hero-content { position: relative; z-index: 2; width: 100%; }
+        /* --- FLOATING NAVBAR --- */
+        .navbar { 
+            position: fixed; top: 20px; left: 50%; transform: translateX(-50%); width: calc(100% - 48px); max-width: 1000px; 
+            background: var(--surface); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); 
+            border: 1px solid rgba(255,255,255,0.4); border-radius: var(--radius-lg); z-index: 1000; box-shadow: var(--shadow-sm); 
+        }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 12px 24px; }
+        .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.25rem; letter-spacing: -0.5px; }
+        .brand-icon { background: var(--brand-red); color: white; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); font-size: 1rem; }
+        .highlight { color: var(--brand-red); }
+        
+        .nav-links { display: flex; align-items: center; gap: 28px; font-weight: 600; font-size: 0.95rem; }
+        .nav-links a { transition: color 0.2s; }
+        .nav-links a:hover { color: var(--brand-red); }
+        .btn-primary { background: var(--text-main); color: white !important; padding: 10px 24px; border-radius: 50px; transition: var(--transition-smooth); }
+        .btn-primary:hover { background: var(--brand-red); transform: scale(1.05); }
+        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
 
-.hero-text { text-align: center; color: var(--white); margin-bottom: 50px; }
-.hero-text h1 { font-size: 3rem; font-weight: 700; margin-bottom: 10px; }
-.hero-text p { font-size: 1.1rem; opacity: 0.9; }
+        /* --- HERO SECTION --- */
+        .hero { text-align: center; padding: 180px 20px 80px; animation: fadeInDown 1s ease-out; }
+        .hero h1 { font-size: 4rem; font-weight: 800; line-height: 1.1; letter-spacing: -2px; margin-bottom: 24px; }
+        .text-gradient { background: linear-gradient(135deg, var(--brand-red), #e11d48); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.25rem; color: var(--text-muted); max-width: 600px; margin: 0 auto; font-weight: 500; }
 
-/* The Grid */
-.support-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-/* The Cards */
-.card {
-    background: var(--white);
-    border-radius: 15px;
-    padding: 30px 20px;
-    text-align: center;
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-bottom: 4px solid transparent;
-    cursor: pointer;
-    overflow: hidden;
-}
+        /* --- SECTION LABELS --- */
+        .section-label { display: flex; align-items: center; gap: 16px; margin: 60px 0 24px; }
+        .section-label span { font-size: 0.85rem; font-weight: 800; color: var(--brand-red); background: rgba(123, 18, 10, 0.1); padding: 4px 12px; border-radius: 50px; }
+        .section-label h2 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.5px; }
 
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-    border-bottom: 4px solid var(--theme-color);
-}
+        /* --- BENTO GRID SYSTEM --- */
+        .bento-grid { display: grid; gap: 24px; margin-bottom: 40px; }
+        .bento-card { 
+            background: var(--surface-solid); border: 1px solid var(--border-solid); border-radius: var(--radius-lg); 
+            padding: 32px; position: relative; overflow: hidden; box-shadow: var(--shadow-sm); 
+            transition: var(--transition-smooth); display: flex; flex-direction: column; z-index: 1; text-decoration: none; color: var(--text-main);
+        }
+        .bento-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: rgba(123,18,10,0.2); }
 
-.badge {
-    position: absolute;
-    top: 15px; right: 15px;
-    font-size: 0.7rem; font-weight: 700;
-    color: #fff;
-    padding: 4px 12px;
-    border-radius: 20px;
-    text-transform: uppercase;
-}
-.pathao-bg { background: #E63946; }
-.indrive-bg { background: #68B04D; }
-.yango-bg { background: #DA2C38; }
-.sajilo-bg { background: #2A9D8F; }
+        /* --- 1. SUPPORT CARDS --- */
+        .support-grid { grid-template-columns: repeat(4, 1fr); }
+        .icon-box { font-size: 2rem; margin-bottom: 24px; width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-md); background: #f1f5f9; transition: var(--transition-smooth); }
+        .bento-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; }
+        .card-action { margin-top: auto; font-size: 0.95rem; font-weight: 600; color: var(--text-muted); display: flex; align-items: center; gap: 8px; transition: var(--transition-smooth); }
+        
+        .bento-card:hover .card-action { color: var(--brand-red); }
+        .bento-card:hover .card-action i { transform: translateX(6px); }
+        .pathao:hover .icon-box { color: #E63946; background: rgba(230,57,70,0.1); }
+        .indrive:hover .icon-box { color: #68B04D; background: rgba(104,176,77,0.1); }
+        .yango:hover .icon-box { color: #DA2C38; background: rgba(218,44,56,0.1); }
+        .sajilo:hover .icon-box { color: #2A9D8F; background: rgba(42,157,143,0.1); }
 
-.icon-wrapper { font-size: 2.5rem; color: var(--text-dark); margin-bottom: 15px; }
-.card h3 { font-size: 1.1rem; margin-bottom: 15px; font-weight: 600; }
-.action-text { color: var(--theme-color); font-weight: 600; font-size: 0.9rem; }
+        /* --- 2. INSURANCE BANNER --- */
+        .insurance-grid { grid-template-columns: 1fr; }
+        .banner-card { flex-direction: row; align-items: center; justify-content: space-between; padding: 48px; background: linear-gradient(135deg, var(--text-main), #1e293b); color: white; border: none; }
+        .banner-content { max-width: 600px; z-index: 2; }
+        .badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); padding: 6px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; margin-bottom: 20px; backdrop-filter: blur(4px); }
+        .banner-content h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 16px; line-height: 1.2; color: #fff;}
+        .banner-content p { font-size: 1.1rem; color: #cbd5e1; margin-bottom: 32px; }
+        .btn-secondary { background: white; color: var(--text-main); padding: 12px 28px; border-radius: 50px; font-weight: 700; font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; transition: var(--transition-smooth); }
+        .banner-card:hover .btn-secondary { background: var(--brand-red); color: white; gap: 12px; }
+        .banner-visual { position: absolute; right: 5%; top: 50%; transform: translateY(-50%); opacity: 0.1; font-size: 12rem; }
 
-/* --- MEMBERSHIP SECTION --- */
-.membership-section {
-    padding: 100px 0;
-    background: var(--bg-light);
-}
+        /* --- 3. COMMUNITY FUND GRID --- */
+        .fund-grid { grid-template-columns: repeat(3, 1fr); }
+        
+        .fund-stat-card { 
+            grid-column: span 2; 
+            background: linear-gradient(135deg, var(--brand-red), #e11d48); 
+            color: white; 
+            border: none;
+            justify-content: center;
+        }
+        .fund-stat-card:hover { border-color: transparent; }
+        .fund-stat-card h3 { font-size: 1.1rem; color: rgba(255,255,255,0.8); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+        .fund-amount { font-size: 3.5rem; font-weight: 800; line-height: 1; margin-bottom: 15px; }
+        .fund-stat-card p { font-size: 1.1rem; color: rgba(255,255,255,0.9); max-width: 400px; }
+        
+        .transparency-card { grid-column: span 1; display: flex; flex-direction: column; justify-content: center; }
+        .transparency-card .icon-box { color: var(--brand-red); background: rgba(123, 18, 10, 0.1); margin-bottom: 15px; }
+        .transparency-card p { font-size: 0.95rem; color: var(--text-muted); }
 
-.membership-wrapper {
-    display: flex;
-    align-items: center;
-    background: var(--white);
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-}
+        .recent-aid-card { grid-column: span 3; }
+        .recent-aid-card h3 { font-size: 1.4rem; border-bottom: 1px solid var(--border-solid); padding-bottom: 15px; margin-bottom: 10px; }
+        .aid-list { width: 100%; }
+        .aid-list li { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--border-solid); }
+        .aid-list li:last-child { border-bottom: none; padding-bottom: 0; }
+        .aid-info { display: flex; flex-direction: column; }
+        .aid-name { font-weight: 700; color: var(--text-main); font-size: 1.05rem; }
+        .aid-cause { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
+        .aid-amount { font-weight: 800; color: #16a34a; font-size: 1.1rem; background: #dcfce7; padding: 6px 16px; border-radius: 50px; }
 
-.membership-content {
-    flex: 1;
-    padding: 60px;
-}
+        /* --- 4. DONATION CARDS --- */
+        .donate-grid { grid-template-columns: repeat(2, 1fr); }
+        .qr-card { padding: 0; text-align: center; }
+        .qr-header { padding: 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-solid); }
+        .wallet-logo { height: 30px; }
+        .logo-invert { filter: brightness(0); } 
+        .wallet-tag { font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 50px; background: #f1f5f9; color: var(--text-muted); }
+        .qr-body { padding: 40px; background: #f8fafc; display: flex; justify-content: center; }
+        .qr-frame { background: white; padding: 16px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); }
+        .qr-image { width: 180px; height: 180px; display: block; border-radius: 8px; }
+        .qr-footer { padding: 24px; background: white; border-top: 1px solid var(--border-solid); }
+        .qr-footer h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; color: var(--text-main);}
+        .wallet-id { font-family: monospace; font-size: 1.2rem; font-weight: 700; color: var(--brand-red); letter-spacing: 1px; }
 
-.membership-image {
-    flex: 1;
-    height: 100%;
-    min-height: 400px;
-}
-.membership-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
+        .esewa-theme:hover { border-color: #60bb46; box-shadow: 0 20px 25px -5px rgba(96, 187, 70, 0.15); }
+        .khalti-theme:hover { border-color: #5c2d91; box-shadow: 0 20px 25px -5px rgba(92, 45, 145, 0.15); }
 
-.tagline {
-    color: var(--theme-color);
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-}
+        /* --- 5. SOCIAL MEDIA GRID (TRUE BENTO LAYOUT) --- */
+        .social-grid { 
+            grid-template-columns: repeat(4, 1fr); 
+            grid-auto-rows: minmax(180px, auto);
+        }
+        
+        .social-card { 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+            position: relative;
+            z-index: 1;
+        }
 
-.membership-content h2 { font-size: 2.5rem; margin: 10px 0 20px; line-height: 1.2; }
-.membership-content p { color: var(--text-gray); margin-bottom: 30px; }
+        /* Beautiful Watermark Icons inside Cards */
+        .watermark-icon {
+            position: absolute;
+            bottom: -15%;
+            right: -5%;
+            font-size: 14rem;
+            opacity: 0.03;
+            z-index: -1;
+            transform: rotate(-15deg);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .social-card:hover .watermark-icon {
+            transform: rotate(0deg) scale(1.1);
+            opacity: 0.08;
+        }
+        
+        /* Specific Grid Spanning */
+        .fb-card { grid-column: span 2; grid-row: span 2; }
+        .whatsapp-card { grid-column: span 2; grid-row: span 1; }
+        .tiktok-card { grid-column: span 1; grid-row: span 1; }
+        .ig-card { grid-column: span 1; grid-row: span 1; }
 
-.benefits-list li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; font-weight: 500; }
-.benefits-list li i { color: var(--theme-color); }
+        .social-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+        .social-icon { width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-md); font-size: 1.8rem; transition: var(--transition-smooth); }
 
-.btn-main {
-    display: inline-block;
-    background: var(--theme-color);
-    color: var(--white);
-    padding: 15px 40px;
-    border-radius: 5px;
-    font-weight: 600;
-    margin-top: 30px;
-    transition: 0.3s;
-    box-shadow: 0 5px 15px rgba(123, 18, 10, 0.3);
-}
-.btn-main:hover { background: var(--theme-dark); transform: translateY(-2px); }
+        .social-info h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 8px; }
+        .social-info p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px; }
+        .fb-card .social-info p { font-size: 1.05rem; } /* Slightly larger text for the huge card */
 
-/* --- FOOTER --- */
-footer {
-    background: #111;
-    color: #888;
-    text-align: center;
-    padding: 30px 0;
-    font-size: 0.9rem;
-}
-.socials { margin-top: 10px; }
-.socials a { color: #fff; margin: 0 10px; font-size: 1.2rem; transition: 0.3s; }
-.socials a:hover { color: var(--theme-color); }
+        /* Square Card Specifics (TikTok / IG) */
+        .square-card { justify-content: center; align-items: center; text-align: center; }
+        .square-content { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+        .huge-icon { font-size: 3rem; color: var(--text-main); transition: var(--transition-smooth); margin-bottom: 10px; }
+        .square-card h3 { font-size: 1.2rem; font-weight: 700; margin: 0; }
+        .view-link { font-size: 0.9rem; font-weight: 700; color: var(--text-muted); margin-top: 5px; transition: var(--transition-smooth); }
 
-/* --- RESPONSIVE MEDIA QUERIES --- */
-@media (max-width: 992px) {
-    .support-grid { grid-template-columns: repeat(2, 1fr); max-width: 600px; margin: 0 auto; }
-    .membership-wrapper { flex-direction: column-reverse; }
-    .membership-image { min-height: 250px; width: 100%; }
-    .membership-content { padding: 40px; }
-}
+        /* Platform Hover Colors & Styles */
+        .fb-card .social-icon { color: #1877F2; background: rgba(24, 119, 242, 0.1); }
+        .fb-card:hover { border-color: rgba(24, 119, 242, 0.3); box-shadow: 0 20px 30px rgba(24, 119, 242, 0.1); }
+        .fb-card:hover .card-action, .fb-card:hover .watermark-icon { color: #1877F2; }
 
-@media (max-width: 600px) {
-    .hero-text h1 { font-size: 2rem; }
-    .support-grid { grid-template-columns: 1fr; }
-    .membership-content h2 { font-size: 1.8rem; }
-    .btn-main { width: 100%; text-align: center; }
-}
+        .whatsapp-card .social-icon { color: #25D366; background: rgba(37, 211, 102, 0.1); }
+        .whatsapp-card:hover { border-color: rgba(37, 211, 102, 0.3); box-shadow: 0 20px 30px rgba(37, 211, 102, 0.1); }
+        .whatsapp-card:hover .card-action, .whatsapp-card:hover .watermark-icon { color: #25D366; }
+
+        .tiktok-card:hover { border-color: rgba(0, 0, 0, 0.2); box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1); }
+        .tiktok-card:hover .view-link, .tiktok-card:hover .huge-icon, .tiktok-card:hover .watermark-icon { color: #000000; }
+
+        .ig-card:hover { border-color: rgba(225, 48, 108, 0.3); box-shadow: 0 20px 30px rgba(225, 48, 108, 0.1); }
+        .ig-card:hover .view-link, .ig-card:hover .huge-icon, .ig-card:hover .watermark-icon { color: #E1306C; }
+
+        /* Badges */
+        .member-count { background: #f1f5f9; color: var(--text-muted); font-size: 0.8rem; font-weight: 700; padding: 6px 12px; border-radius: 50px; }
+        .live-badge { background: rgba(225, 29, 72, 0.1); color: #e11d48; font-size: 0.8rem; font-weight: 700; padding: 6px 12px; border-radius: 50px; display: flex; align-items: center; gap: 6px; }
+        .live-badge i { font-size: 0.5rem; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+
+        /* --- FOOTER --- */
+        footer { text-align: center; padding: 60px 20px 40px; color: var(--text-muted); font-size: 0.95rem; font-weight: 500; }
+
+        /* --- SCROLL ANIMATION CLASSES --- */
+        .slide-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .slide-up.visible { opacity: 1; transform: translateY(0); }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 1024px) {
+            .support-grid { grid-template-columns: repeat(2, 1fr); }
+            .fund-grid { grid-template-columns: repeat(2, 1fr); }
+            .fund-stat-card { grid-column: span 2; }
+            .transparency-card { grid-column: span 2; }
+            .recent-aid-card { grid-column: span 2; }
+            
+            /* Tablet Socials Grid Fix */
+            .social-grid { grid-template-columns: repeat(2, 1fr); }
+            .fb-card { grid-column: span 2; grid-row: span 1; }
+            .whatsapp-card { grid-column: span 2; grid-row: span 1; }
+            .tiktok-card, .ig-card { grid-column: span 1; grid-row: span 1; 
+        }
+
+        @media (max-width: 768px) {
+            .navbar { width: 100%; top: 0; border-radius: 0; border: none; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+            .hero { padding: 140px 20px 60px; }
+            .hero h1 { font-size: 2.5rem; letter-spacing: -1px; }
+            
+            .menu-toggle { display: block; z-index: 1001; }
+            .nav-links { 
+                position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: var(--surface-solid); 
+                flex-direction: column; justify-content: center; gap: 40px; font-size: 1.5rem; 
+                opacity: 0; visibility: hidden; transition: var(--transition-smooth); 
+            }
+            .nav-links.active { opacity: 1; visibility: visible; }
+            
+            .support-grid, .donate-grid, .fund-grid, .social-grid { grid-template-columns: 1fr; }
+            .fund-stat-card, .transparency-card, .recent-aid-card { grid-column: span 1; }
+            .fb-card, .whatsapp-card, .tiktok-card, .ig-card { grid-column: span 1; }
+            
+            .fund-amount { font-size: 2.8rem; }
+            .banner-card { flex-direction: column; text-align: center; padding: 32px 24px; }
+            .banner-visual { display: none; } 
+            .btn-secondary { width: 100%; justify-content: center; }
+
+             /* Mobile Socials Grid Fix */
+            .social-grid { grid-template-columns: 1fr; }
+            .fb-card, .whatsapp-card, .tiktok-card, .ig-card { grid-column: span 1; grid-row: span 1; }
+        }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
-<nav class="navbar">
-    <div class="container nav-container">
-        
-        <!-- Updated Logo Section -->
-        <a href="#" class="brand-identity">
-            <!-- REPLACE 'logo.png' with your actual image file path -->
-            <img src="chiyacut_logo.png" alt="Chiyacut Logo" class="logo-img"> 
+    <!-- Ambient Background Gradients -->
+    <div class="ambient-bg ambient-1"></div>
+    <div class="ambient-bg ambient-2"></div>
+
+    <!-- FLOATING NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="brand">
+               <!-- <div class="brand-icon"><i class="fas fa-mug-hot"></i></div> -->
+                <span class="brand-text">ChiyaCut<span class="highlight"></span></span>
+            </a>
             
-            <div class="logo-text">
-                <span class="name">ChiyaCut<span class="highlight"></span></span>
-                <span class="tagline">चिया पिएर जाउ।</span>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
             </div>
-        </a>
-
-        <!-- Menu Links -->
-        <ul class="nav-links">
-            <li><a href="#support">Support</a></li>
-            <li><a href="#membership" class="btn-nav">Join Membership</a></li>
-        </ul>
-    </div>
-</nav>
-
-    <!-- SECTION 1: Support Hero (The 4 Cards) -->
-    <header id="support" class="hero-section">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <div class="hero-text">
-                <h1>We Support you </h1>
-                <p>Submit your problems, we will share directly to companies</p>
-            </div>
-
-            <div class="support-grid">
-               
-
-                <!-- InDrive -->
-                <a href="https://forms.gle/GrkSqcQ765LzidGy6" target="_blank" class="card">
-                    <div class="badge indrive-bg">inDrive</div>
-                    <div class="icon-wrapper"><i class="fas fa-car-side"></i></div>
-                    <h3>inDrive Support</h3>
-                    <div class="action-text">Apply Now <i class="fas fa-arrow-right"></i></div>
-                </a>
-
-                <!-- Yango -->
-                <a href="https://forms.gle/tWc3aQxvyM7mKM316" target="_blank" class="card">
-                    <div class="badge yango-bg">Yango</div>
-                    <div class="icon-wrapper"><i class="fas fa-taxi"></i></div>
-                    <h3>Yango Support</h3>
-                    <div class="action-text">Apply Now <i class="fas fa-arrow-right"></i></div>
-                </a>
-
-              
-            </div>
+            
+            <ul class="nav-links">
+                <li><a href="#support">Support</a></li>
+                <li><a href="#insurance">Insurance</a></li>
+                <li><a href="#fund">Fund</a></li>
+                <li><a href="#socials">Community</a></li>
+                <li><a href="#donate" class="btn-primary">Support Us</a></li>
+            </ul>
         </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <h1>Nepal's #1<br><span class="text-gradient">Ride-Sharing</span> Community.</h1>
+        <p>One platform for support, claim insurance, and community and more...</p>
     </header>
 
-    <!-- SECTION 2: Membership -->
-    <section id="membership" class="membership-section">
-        <div class="container">
-            <div class="membership-wrapper">
-                <div class="membership-content">
-                    <span class="tagline">ChiyaCut Community</span>
-                    <h2>Become a Pro Member</h2>
-                    <p>ChiyaCut को member बन्न चाहानुहुन्छ भने:</br>
-📢 फाइदाहरु 🔥
-</p>
-                    
-                    <ul class="benefits-list">
-                        <li><i class="fas fa-check-circle"></i>भिड बाट अलग,  राम्रो community पाउनुहुने छ।</li>
-                        <li><i class="fas fa-check-circle"></i>Accident Insurance claim गर्न सहयोग गरिने छ।</li>
-                        <li><i class="fas fa-check-circle"></i>केही case पर्दा सुझाव सल्लाह र साथ पाउनुहुने छ।</li>
-                        <li><i class="fas fa-check-circle"></i>खास support र परामर्शको लाभ पाउनुहुने छ। Phigital (physical + digital) Support🔥</li>
-                        <li><i class="fas fa-check-circle"></i>भेटघाट कार्यक्रममा सहभागिता गराइने छ।</li>
-                    </ul>
+    <!-- MAIN BENTO GRID SYSTEM -->
+    <main class="container">
 
-                    <a href="https://forms.gle/WBwDArZKr9Y1aMTS7" target="_blank"class="btn-main">Register Membership</a>
+         <!-- SECTION 01: INSURANCE -->
+        <div class="section-label slide-up" id="insurance">
+            <span>01</span>
+            <h2>Rider Protection</h2>
+        </div>
+
+        <div class="bento-grid insurance-grid slide-up">
+            <a href="https://gigfine.com/" target="_blank" class="bento-card banner-card">
+                <div class="banner-content">
+                    <div class="badge"><i class="fas fa-shield-alt"></i> gigfine.com</div>
+                    <h2>Claim Insurance</h2>
+                    <p>You can directly claim insurance. Also you can get the contact number and know documents need to claim insurance.</p>
+                    <span class="btn-secondary">Start Claim <i class="fas fa-arrow-right"></i></span>
                 </div>
-                <div class="membership-image">
-                    <!-- Image of a rider or community gathering -->
-                    <img src="meet-up1.jpeg" alt="Nepal Rider Community">
+                <div class="banner-visual">
+                    <i class="fas fa-file-medical-alt"></i>
+                </div>
+            </a>
+        </div>
+        
+        <!-- SECTION 02: PLATFORM SUPPORT -->
+        <div class="section-label slide-up" id="support">
+            <span>02</span>
+            <h2>Select Platform Support</h2>
+        </div>
+        
+        <div class="bento-grid support-grid slide-up">
+
+             <!-- Sajilo -->
+            <a href="https://forms.gle/sPLDVdasUJ5kjDgS6" target="_blank" class="bento-card support-card sajilo">
+                <div class="icon-box"><i class="fas fa-biking"></i></div>
+                <h3>Sajilo</h3>
+                <div class="card-action">Get Help <i class="fas fa-arrow-right"></i></div>
+            </a>
+            <!-- Pathao -->
+            <a href="https://forms.gle/ZmEFW1r9awNasiLS7" target="_blank" class="bento-card support-card pathao">
+                <div class="icon-box"><i class="fas fa-motorcycle"></i></div>
+                <h3>Pathao</h3>
+                <div class="card-action">Get Help <i class="fas fa-arrow-right"></i></div>
+            </a>
+            <!-- inDrive -->
+            <a href="https://forms.gle/1Hve7VvU2gcRQb8U6" target="_blank" class="bento-card support-card indrive">
+                <div class="icon-box"><i class="fas fa-car-side"></i></div>
+                <h3>inDrive</h3>
+                <div class="card-action">Get Help <i class="fas fa-arrow-right"></i></div>
+            </a>
+            <!-- Yango -->
+            <a href="https://forms.gle/iz6vMgcqn6bEngbi7" target="_blank" class="bento-card support-card yango">
+                <div class="icon-box"><i class="fas fa-taxi"></i></div>
+                <h3>Yango</h3>
+                <div class="card-action">Get Help <i class="fas fa-arrow-right"></i></div>
+            </a>
+           
+        </div>
+
+
+       
+
+        <!-- SECTION 03: COMMUNITY SUPPORT FUND -->
+        <div class="section-label slide-up" id="fund">
+            <span>03</span>
+            <h2>Community Support Fund</h2>
+        </div>
+
+        <div class="bento-grid fund-grid slide-up">
+            <div class="bento-card fund-stat-card">
+                <h3>Total Aid</h3>
+                <div class="fund-amount">Rs. 0</div>
+                <p>We get support from our ride sharing heros.</p>
+            </div>
+
+            <div class="bento-card transparency-card">
+                <div class="icon-box"><i class="fas fa-hand-holding-heart"></i></div>
+                <h3>100% Transparent</h3>
+                <p>We provide monthly report to the community.</p>
+            </div>
+
+            <div class="bento-card recent-aid-card">
+                <h3>Monthly Top 3 Aid Given</h3>
+                <ul class="aid-list">
+                    <li>
+                        <div class="aid-info">
+                            <span class="aid-name">...</span>
+                            <span class="aid-cause">...</span>
+                        </div>
+                        <span class="aid-amount">Rs. 0</span>
+                    </li>
+                    <li>
+                        <div class="aid-info">
+                            <span class="aid-name">...</span>
+                            <span class="aid-cause">...</span>
+                        </div>
+                        <span class="aid-amount">Rs. 0</span>
+                    </li>
+                    <li>
+                        <div class="aid-info">
+                            <span class="aid-name">...</span>
+                            <span class="aid-cause">...</span>
+                        </div>
+                        <span class="aid-amount">Rs. 0</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SECTION 04: DONATIONS -->
+        <div class="section-label slide-up" id="donate">
+            <span>04</span>
+            <h2>Fuel Our Mission</h2>
+        </div>
+
+        <div class="bento-grid donate-grid slide-up">
+            <div class="bento-card qr-card esewa-theme">
+                <div class="qr-header">
+                    <img src="https://esewa.com.np/common/images/esewa_logo.png" alt="eSewa" class="wallet-logo">
+                    <span class="wallet-tag">Verified</span>
+                </div>
+                <div class="qr-body">
+                    <div class="qr-frame">
+                        <img src="esewa.jpg" alt="eSewa QR" class="qr-image">
+                    </div>
+                </div>
+                <div class="qr-footer">
+                    <h4>Scan to Donate</h4>
+                    <p class="wallet-id">ID: 9868222043</p>
+                </div>
+            </div>
+
+            <div class="bento-card qr-card khalti-theme">
+                <div class="qr-header">
+                    <img src="https://khalti.com/static/images/web/logo.svg" alt="Khalti" class="wallet-logo logo-invert">
+                    <span class="wallet-tag">Verified</span>
+                </div>
+                <div class="qr-body">
+                    <div class="qr-frame">
+                        <img src="khalti.jpg" alt="Khalti QR" class="qr-image">
+                    </div>
+                </div>
+                <div class="qr-footer">
+                    <h4>Scan to Donate</h4>
+                    <p class="wallet-id">ID: 9868222043</p>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 ChiyaCut</p>
-        <div class="socials">
-            <a href="https://www.tiktok.com/@chiyacut"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.youtube.com/@chiyacut"><i class="fab fa-youtube"></i></a>
+        <!-- SECTION 05: SOCIAL MEDIA COMMUNITY -->
+        <div class="section-label slide-up" id="socials">
+            <span>05</span>
+            <h2>Join the Conversation</h2>
         </div>
+
+        <div class="bento-grid social-grid slide-up">
+            
+            <!-- Facebook Group (Huge 2x2 Bento Block) -->
+            <a href="https://facebook.com/hustlerkhem" target="_blank" class="bento-card social-card fb-card">
+                <i class="fab fa-facebook-f watermark-icon"></i>
+                <div class="social-header">
+                    <div class="social-icon"><i class="fab fa-facebook-f"></i></div>
+                    <span class="member-count"><i class="fas fa-users"></i> 200+ Followers</span>
+                </div>
+                <div class="social-info">
+                    <h3>Founder facebook account</h3>
+                    <p>Directly join with founder and get updates ans more...</p>
+                </div>
+                <div class="card-action">Visit Profile <i class="fas fa-arrow-right"></i></div>
+            </a>
+
+           <!-- WhatsApp Emergency (Wide 2x1 Bento Block) -->
+            <a href="https://wa.me/9779868222043" target="_blank" class="bento-card social-card whatsapp-card">
+                <i class="fab fa-whatsapp watermark-icon"></i>
+                <div class="social-header">
+                    <div class="social-icon"><i class="fab fa-whatsapp"></i></div>
+                    <span class="live-badge"><i class="fas fa-circle"></i> 24/7 Active</span>
+                </div>
+                <div class="social-info">
+                    <h3>WhatsApp</h3>
+                    <p>Do message directly anytime.</p>
+                </div>
+                <div class="card-action">Message Now <i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- TikTok (Small 1x1 Square) -->
+            <a href="https://tiktok.com/chiyacut" target="_blank" class="bento-card social-card square-card tiktok-card">
+                <i class="fab fa-tiktok watermark-icon"></i>
+                <div class="square-content">
+                    <i class="fab fa-tiktok huge-icon"></i>
+                    <h3>TikTok</h3>
+                    <span class="view-link">Follow <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <!-- youtube (Small 1x1 Square) -->
+            <a href="https://youtube.com/chiyacut" target="_blank" class="bento-card social-card square-card ig-card">
+                <i class="fab fa-youtube watermark-icon"></i>
+                <div class="square-content">
+                    <i class="fab fa-youtube huge-icon"></i>
+                    <h3>YouTube</h3>
+                    <span class="view-link">Subscribe <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 ChiyaCut.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- JAVASCRIPT INCLUDED IN SAME FILE -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            /* --- 1. MOBILE MENU TOGGLE --- */
+            const mobileMenuBtn = document.getElementById('mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+            const navItems = document.querySelectorAll('.nav-links a');
+            const body = document.body;
+
+            function toggleMenu() {
+                navLinks.classList.toggle('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                
+                if(navLinks.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                    body.style.overflow = 'hidden'; 
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                    body.style.overflow = 'auto';
+                }
+            }
+
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+
+            navItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    if (navLinks.classList.contains('active')) {
+                        toggleMenu();
+                    }
+                });
+            });
+
+            /* --- 2. SMOOTH SCROLLING --- */
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const headerOffset = 100; 
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+
+            /* --- 3. SCROLL REVEAL ANIMATION --- */
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, observerOptions);
+
+            const slideUpElements = document.querySelectorAll('.slide-up');
+            slideUpElements.forEach(el => observer.observe(el));
+        });
+    </script>
 </body>
 </html>
