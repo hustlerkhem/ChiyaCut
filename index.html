@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nepali #1 Ride Sharing Community</title>
+    <title>Chiyacut | Empowering Nepal's Riders</title>
     <!-- Premium Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
@@ -30,6 +30,56 @@
             --radius-sm: 8px;
             
             --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* --- HERO BUTTON SETTINGS --- */
+        .hero-actions {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn-hero-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            /* Uses your exact theme red */
+            background: var(--brand-red); 
+            color: #ffffff;
+            padding: 16px 42px;
+            border-radius: 50px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            /* Premium glowing shadow using your brand color */
+            box-shadow: 0 10px 25px -5px rgba(123, 18, 10, 0.3);
+            border: 2px solid transparent;
+            /* Uses the exact same smooth transition as your Bento cards */
+            transition: var(--transition-smooth);
+        }
+
+        .btn-hero-primary i {
+            font-size: 1rem;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Hover Physics */
+        .btn-hero-primary:hover {
+            /* Lifts up exactly like the Bento Grid cards */
+            transform: translateY(-5px); 
+            /* Shifts to a slightly lighter red on hover */
+            background: var(--brand-red-light); 
+            /* Shadow deepens */
+            box-shadow: 0 20px 30px -10px rgba(123, 18, 10, 0.5);
+            /* Adds a subtle premium border reflection */
+            border-color: rgba(255, 255, 255, 0.1); 
+            color: #ffffff;
+        }
+
+        .btn-hero-primary:hover i {
+            transform: translateX(6px);
         }
 
         /* --- RESET & TYPOGRAPHY --- */
@@ -283,6 +333,7 @@
             .social-grid { grid-template-columns: 1fr; }
             .fb-card, .whatsapp-card, .tiktok-card, .ig-card { grid-column: span 1; grid-row: span 1; }
         }
+       
     </style>
 </head>
 <body>
@@ -313,10 +364,18 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
+        <!-- HERO SECTION -->
     <header class="hero">
         <h1>Nepal's #1<br><span class="text-gradient">Ride-Sharing</span> Community.</h1>
         <p>One platform for support, claim insurance, and community and more...</p>
+        
+       <!-- NEW JOIN NOW BUTTON -->
+        <div class="hero-actions">
+            
+            <a href="https://forms.gle/f3cxaJiikWvJn9Jp8" target="_blank" class="btn-hero-primary">
+                Join Community <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
     </header>
 
     <!-- MAIN BENTO GRID SYSTEM -->
